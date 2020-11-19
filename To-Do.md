@@ -1,15 +1,15 @@
 T0-D0:
 
 Database:
-[] Setup full user database + dummy data
-[] Setup full plant database + dummy data 
-[] Setup "plant_type" database + 10 plant archive data
+[x] Setup full user database + dummy data
+[x] Setup full plant database + dummy data 
+[x] Setup "plant_type" database + 10 plant archive data
 
-[] Registration page:
+[x] Registration page:
     update registerForm and user.router.js to take in 3 additional parameters:
-    [] Fullname 
-    [] Favorite Plant (dropdown input)
-    [] Ecological region (dropdown input)
+    [x] Fullname 
+    [x] Favorite Plant (dropdown input)
+    [x] Ecological region (dropdown input)
 
 [] GreenHouse Dashboard page:
     [] Header: GreenHouse
@@ -45,11 +45,9 @@ Database:
     [] Delete Plant button for DELETE request
     [] Back to Dashboard route button 
 
-
-  // "background": {
-  //   "type": "html",
-  //   "url": "https://github.com/jasonette",
-  //   "action": {
-  //     "trigger": "navigate"
-  //   }
-  // }
+[] Stretch
+    [] Cloud Storage for plant image database 
+    [] Cloud Storage for personalized image uploads
+    [] Trefle API for plant info 
+    [] Public List page to showcase garden 
+    [] Plant Health History - page to add "Health History" dated data to plant object

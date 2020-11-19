@@ -8,6 +8,7 @@ class RegisterForm extends Component {
     password: '',
     full_name: '',
     favorite_plant: '',
+    ecological_region: '',
   };
 
   registerUser = (event) => {
@@ -19,7 +20,8 @@ class RegisterForm extends Component {
         username: this.state.username,
         password: this.state.password,
         full_name: this.state.full_name,
-        favorite_plant: this.state.favorite_plant
+        favorite_plant: this.state.favorite_plant,
+        ecological_region: this.state.ecological_region
       },
     });
   }; // end registerUser
@@ -70,25 +72,50 @@ class RegisterForm extends Component {
               type="text"
               name="full_name"
               value={this.state.full_name}
+              placeholder="Enter your name"
               required
               onChange={this.handleInputChangeFor('full_name')}
             />
           </label>
         </div>
-        {/* <div>
+        <div>
+          
             <label htmlFor="favorite_plant">
-          Favorite Plant:
-            <select 
-              name="favorite_plant" 
-              id="favorite_plant"
-              required 
-              value={this.state.favorite_plant} 
-              onChange={this.handleInputChangeFor('favorite_plant')>
+            Favorite Plant:
+              <select 
+                name="favorite_plant" 
+                id="favorite_plant"
+                placeholder="Optional"
+                value={this.handleInputChangeFor('favorite_plant')}
+                onChange={this.handleInputChangeFor('favorite_plant')}
+                >
+                <>
+                <option>Select A Plant</option>
                 <option value='fyccus'>Fyccus</option>
-                <option value='snake'>Snake</option>
-            </select>
+                <option value='snakey'>Snake</option>
+                </>
+              </select>
             </label>
-        </div> */}
+        </div>
+        <br></br>
+        <div>
+          <label htmlFor="ecological_region">
+          Ecological Region:
+            <select 
+              name="ecological_region" 
+              id="ecological_region"
+              placeholder="Optional"
+              value={this.handleInputChangeFor('ecological_region')}
+              onChange={this.handleInputChangeFor('ecological_region')}
+              >
+              <>
+              <option>Select A Region</option>
+              <option value='marine west coast forest'>Marine West Coast Forest</option>
+              <option value='western forested mountains'>Western Forested Mountains</option>
+              </>
+            </select>
+          </label>
+      </div>
         <div>
           <input className="btn" type="submit" name="submit" value="Register" />
         </div>
