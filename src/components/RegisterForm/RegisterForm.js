@@ -6,6 +6,8 @@ class RegisterForm extends Component {
   state = {
     username: '',
     password: '',
+    full_name: '',
+    favorite_plant: '',
   };
 
   registerUser = (event) => {
@@ -16,6 +18,8 @@ class RegisterForm extends Component {
       payload: {
         username: this.state.username,
         password: this.state.password,
+        full_name: this.state.full_name,
+        favorite_plant: this.state.favorite_plant
       },
     });
   }; // end registerUser
@@ -59,6 +63,32 @@ class RegisterForm extends Component {
             />
           </label>
         </div>
+        <div>
+          <label htmlFor="full_name">
+            Full Name:
+            <input
+              type="text"
+              name="full_name"
+              value={this.state.full_name}
+              required
+              onChange={this.handleInputChangeFor('full_name')}
+            />
+          </label>
+        </div>
+        {/* <div>
+            <label htmlFor="favorite_plant">
+          Favorite Plant:
+            <select 
+              name="favorite_plant" 
+              id="favorite_plant"
+              required 
+              value={this.state.favorite_plant} 
+              onChange={this.handleInputChangeFor('favorite_plant')>
+                <option value='fyccus'>Fyccus</option>
+                <option value='snake'>Snake</option>
+            </select>
+            </label>
+        </div> */}
         <div>
           <input className="btn" type="submit" name="submit" value="Register" />
         </div>
