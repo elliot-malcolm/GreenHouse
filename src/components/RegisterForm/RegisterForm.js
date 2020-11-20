@@ -79,14 +79,13 @@ class RegisterForm extends Component {
           </label>
         </div>
         <div>
-          
             <label htmlFor="favorite_plant">
             Favorite Plant:
               <select 
                 name="favorite_plant" 
                 id="favorite_plant"
                 placeholder="Optional"
-                value={this.handleInputChangeFor('favorite_plant')}
+                value={this.state.favorite_plant}
                 onChange={this.handleInputChangeFor('favorite_plant')}
                 >
                 <>

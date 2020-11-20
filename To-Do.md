@@ -3,18 +3,14 @@ T0-D0:
 Database:
 [x] Setup full user database + dummy data
 [x] Setup full plant database + dummy data 
-[x] Setup "plant_type" database + 10 plant archive data
+[x] Setup "plant_type" database + INSERT 10 plants archive data
+
 
 [x] Registration page:
     update registerForm and user.router.js to take in 3 additional parameters:
     [x] Fullname 
     [x] Favorite Plant (dropdown input)
     [x] Ecological region (dropdown input)
-
-[] GreenHouse Dashboard page:
-    [] Header: GreenHouse
-    [] Plant Divs populated with IMG from plant_type 
-    [] Bottom of page route to Create Plant Object page
 
 [] Create Plant Object page:
     Input fields:
@@ -25,6 +21,11 @@ Database:
     [] special notes input
     [] ADD to Greenhouse: POST to plants db
     [] Dashboard route button 
+
+[] GreenHouse Dashboard page:
+    [] Header: GreenHouse
+    [] Plant Divs populated with IMG from plant_type 
+    [] Bottom of page route to Create Plant Object page
 
 [] Plant Details page:
     Display from plants/plant_type db:
