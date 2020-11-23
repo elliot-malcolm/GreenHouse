@@ -1,9 +1,8 @@
 .nav-title {
     font-size: 24px;
     font-weight: 700;
-    display: inline-block;
     color: #00b436;
-    padding-left: 10px;
+    text-align: center;
 }
 
 .nav {

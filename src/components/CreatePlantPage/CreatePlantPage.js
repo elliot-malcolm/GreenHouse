@@ -13,6 +13,7 @@ class CreatePlantPage extends Component {
           list: '',
           scientific_name: '', //populated from plant_type table
           image_url: '' //populated from plant_type table
+        //   user_id:''
         }
     }
 

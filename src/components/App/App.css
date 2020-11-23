@@ -157,3 +157,12 @@ input {
 #welcomeList {
   text-align: center;
 }
+
+.plantDiv {
+  display: inline-block;
+  max-width: 500px;
+}
+
+ul{
+  list-style-type: none;
+}

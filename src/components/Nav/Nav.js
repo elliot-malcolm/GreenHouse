@@ -18,7 +18,7 @@ const Nav = (props) => {
 
   return (
     <div className="nav">
-      <Link to="/home">
+      <Link to="/info">
         <h2 className="nav-title">GreenHouse</h2>
       </Link>
       <div className="nav-right">

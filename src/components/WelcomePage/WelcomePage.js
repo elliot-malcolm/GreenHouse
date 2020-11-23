@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 import DashboardPage from '../DashboardPage/DashboardPage'
 import TypeDisplay from '../TypeDisplay/TypeDisplay'
+import './WelcomePage.css'
 
 class WelcomePage extends React.Component {
 

@@ -1,3 +1,7 @@
 #welcomeList {
     text-align: center;
 }
+
+.plantDiv {
+    display: inline-block;
+  }
