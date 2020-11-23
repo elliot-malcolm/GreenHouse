@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { put, takeEvery } from 'redux-saga/effects';
 
-//send axios request to plant.router to get all plants from DB
+//send axios request to plant_type.router to get all plants from DB
 function* fetchPlantType() {
   try{
     const plantTypeResponse = yield axios.get(`/api/plant_type`)

@@ -23,10 +23,11 @@ class WelcomePage extends React.Component {
             >
             🌱
           </span>
+          <h1>Hello World!</h1>
           <DashboardPage />
           
-          {JSON.stringify(this.props.store)}
-          {JSON.stringify(this.props.store.plantTypeReducer)}
+          {/* {JSON.stringify(this.props.store)}
+          {JSON.stringify(this.props.store.plantTypeReducer)} */}
           <TypeDisplay />
       </div>
     )
