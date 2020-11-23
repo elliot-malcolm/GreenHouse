@@ -35,11 +35,19 @@ const Nav = (props) => {
               Welcome!
             </Link>
             <Link id="plantLink" className="nav-link" to="/newplant">
-              New Plant 🌱
-            </Link>
-            <LogOutButton className="nav-link" />
-          </>
-        )}
+              New Plant  
+              <span
+                className="plantEmoji"
+                role="img"
+                aria-label=""
+                aria-hidden="true"
+                >
+                    🌱
+              </span>
+                    </Link>
+                    <LogOutButton className="nav-link" />
+                  </>
+                )}
         {/* Always show this link since the about page is not protected */}
         <Link className="nav-link" to="/about">
           About
