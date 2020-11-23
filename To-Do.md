@@ -25,15 +25,8 @@ Database:
 [] GreenHouse Dashboard page:
     [x] Header: GreenHouse
     [x] Plant Divs populated with IMG from plant_type 
-
-[] Plant Details page:
-    Display from plants/plant_type db:
-    [] Name
-    [] Type 
-    [] Scientific Name
-    [] size
-    [] notes
-    [] edit plant info page route
+    [] EDIT button
+    [] DELETE button and delete request
 
 [] Edit Plant Details Page:
     PUT edits on fields:
@@ -42,15 +35,14 @@ Database:
     [] Size
     [] Special Notes
     [] Save Changes button for PUT request
-    [] Delete Plant button for DELETE request
-    [] Back to Dashboard route button 
 
 [] Stretch
+    [] Public List page to showcase garden 
+    [] Plant Health History - page to add "Health History" dated data to plant object
+    [] Public commenting feature 
     [] Cloud Storage for plant image database 
     [] Cloud Storage for personalized image uploads
     [] Trefle API for plant info 
-    [] Public List page to showcase garden 
-    [] Plant Health History - page to add "Health History" dated data to plant object
 
 
         // get all plant_type -> arrayreducer for all objects + sagawatcher fetch plant_type info

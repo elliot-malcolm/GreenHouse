@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
-import DashboardPage from '../DashboardPage/DashboardPage'
-import TypeDisplay from '../TypeDisplay/TypeDisplay'
-import './WelcomePage.css'
+import DashboardPage from '../DashboardPage/DashboardPage';
+import TypeList from '../TypeList/TypeList';
+import './WelcomePage.css';
 
-class WelcomePage extends React.Component {
+class WelcomePage extends Component {
 
   componentDidMount = () => {
     this.props.dispatch({
@@ -27,9 +27,10 @@ class WelcomePage extends React.Component {
           <h1>Hello World!</h1>
           <DashboardPage />
           
-          {/* {JSON.stringify(this.props.store)}
-          {JSON.stringify(this.props.store.plantTypeReducer)} */}
-          <TypeDisplay />
+          {/* {JSON.stringify(this.props.store)} */}
+          {/* {JSON.stringify(this.props.store.plantTypeReducer)} */}
+          {/* <TypeDisplay /> */}
+          {/* <TypeList /> */}
       </div>
     )
   }

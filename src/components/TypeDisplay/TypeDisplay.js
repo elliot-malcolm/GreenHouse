@@ -4,15 +4,12 @@ import mapStoreToProps from '../../redux/mapStoreToProps';
 
 class TypeDisplay extends Component {
 
-
-  
   componentDidMount = () => {
     this.props.dispatch({
         type: 'FETCH_PLANT_TYPE'
     })
   }
-
-
+  
     render() {
         return (
         //     <div>
