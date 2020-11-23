@@ -8,9 +8,17 @@ class UserPage extends Component {
   render() {
     return (
       <div className="container">
-        <h1 className="plantEmoji">🌱</h1>
+         <span
+        className="plantEmoji"
+        role="img"
+        aria-label=""
+        aria-hidden="true"
+    >
+        🌱
+    </span>
         <h1 id="welcome">Welcome, {this.props.store.user.username}!</h1>
         <h2>Your Name is: {this.props.store.user.full_name}</h2>
+        <h2>Your ID is: {this.props.store.user.id}</h2>
         <h2>Your Favorite Plant Type is: {this.props.store.user.favorite_plant}</h2>
         <h2>Your Ecological Region is: {this.props.store.user.ecological_region}</h2>
         <LogOutButton className="log-in" />

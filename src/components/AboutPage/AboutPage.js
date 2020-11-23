@@ -8,7 +8,15 @@ import React from 'react';
 const AboutPage = () => (
   <div className="container">
     <div>
-      <h3 className="plantEmoji">🌱</h3><h3 id="readme">
+    <span
+        className="plantEmoji"
+        role="img"
+        aria-label=""
+        aria-hidden="true"
+    >
+        🌱
+    </span>
+      <h3 id="readme">
       <br></br>GreenHouse is a Reactjs based app for digitizing plants and sharing them.
         <br></br>
           Status in progress

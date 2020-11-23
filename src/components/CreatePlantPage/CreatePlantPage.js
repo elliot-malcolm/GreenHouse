@@ -40,7 +40,7 @@ class CreatePlantPage extends Component {
     render() {
         return (
             // <form className="formInput" onSubmit={this.addToGarden}>
-            <div>
+        <div id="addPlantForm">
             <div>
                     <label htmlFor="type">
                        What type is your plant?:
@@ -118,7 +118,7 @@ class CreatePlantPage extends Component {
                     </label>
                 </div>
                 <button onClick={this.addToGarden}>Add to Garden</button>
-            </div>
+        </div>
         );
     }
 }

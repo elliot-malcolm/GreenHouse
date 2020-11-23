@@ -9,6 +9,12 @@ class DashboardPage extends Component {
         type: 'FETCH_PLANTS'
     })
   }
+  
+  // componentDidMount = () => {
+  //   this.props.dispatch({
+  //       type: 'FETCH_PLANT_TYPE'
+  //   })
+  // }
 
   deletePlant = (event, param) => {
     console.log(event, param)
@@ -41,6 +47,15 @@ class DashboardPage extends Component {
               );
             })}
           </div>
+          // <div>
+          //    <ul>
+          //    {this.props.store.plantTypeReducer.map( plantType => {
+          //      return (
+          //        <li key={plantType.id}></li>
+          //        <li>Type:{plantType.type}</li>
+          //        </ul>
+          //      )
+          //  </div>
         );
     }
 }
