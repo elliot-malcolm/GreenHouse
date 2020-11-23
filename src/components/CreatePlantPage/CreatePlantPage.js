@@ -8,6 +8,7 @@ class CreatePlantPage extends Component {
           name: '',
           size: '',
           notes: '',
+          list: '',
           type: '', //populated from plant_type table
           scientific_name: '', //populated from plant_type table
           image_url: '', //populated from plant_type table
@@ -27,6 +28,7 @@ class CreatePlantPage extends Component {
               type: this.state.type,
               size: this.state.size,
               notes: this.state.notes,
+              list: '',
               type: '', //populated from plant_type table
               scientific_name: '', //populated from plant_type table
               image_url: '' // populated from plant_type table 
@@ -50,6 +52,7 @@ class CreatePlantPage extends Component {
             <form className="formInput" onSubmit={this.createPlantObject}>
                 <div>
                     <label htmlFor="name">
+                        <h1 class="plantEmoji">🌱</h1>
                     Plant's Name:
                         <input
                         type="text"
@@ -61,44 +64,71 @@ class CreatePlantPage extends Component {
                     </label>
                 </div>
                 <div>
+                    <label htmlFor="type">
+                        What type is your plant?:
+                        <select 
+                            name="type" 
+                            id="type"
+                            placeholder="Optional"
+                            value={this.state.type}
+                            onChange={this.handleInputChangeFor('type')}
+                            >
+                            <>
+                            <option>Got no type?</option>
+                            <option value='Monstera'>Monstera</option>
+                            <option value='BoP'>BoP</option>
+                            <option value='Aloe'>Aloe</option>
+                            </>
+                        </select>
+                    </label>
+                </div>
+                <div>
                     <label htmlFor="size">
-                    Favorite Plant:
+                    How large is your plant?:
                         <select 
                             name="size" 
                             id="size"
                             placeholder="Optional"
                             value={this.state.size}
+                            required
                             onChange={this.handleInputChangeFor('size')}
-                        >
-                        <>
-                        <option>How large is your plant?</option>
-                        <option value='smol'>Smol</option>
-                        <option value='adult'>Medium</option>
-                        <option value='chonk'>Chonky</option>
-                        </>
-              </select>
-            </label>
-        </div>
-                <div>
-                    <label htmlFor="notes">
-                    Plant's Name:
-                        <input
-                        type="text"
-                        name="notes"
-                        value={this.state.notes}
-                        onChange={this.handleInputChangeFor('notes')}
-                        />
+                            >
+                            <>
+                            <option>Plant Size?</option>
+                            <option value='smol'>Smol</option>
+                            <option value='adult'>Medium</option>
+                            <option value='chonk'>Chonky</option>
+                            </>
+                        </select>
                     </label>
                 </div>
                 <div>
-                    <label htmlFor="name">
-                    Plant's Name:
+                    <label htmlFor="list">
+                    List your plant?:
+                        <select 
+                            name="list" 
+                            id="list"
+                            placeholder="Optional"
+                            value={this.state.list}
+                            onChange={this.handleInputChangeFor('list')}
+                            >
+                            <>
+                            <option>List your plant?</option>
+                            <option value='Yes'>Yes</option>
+                            <option value='No'>No</option>
+                            </>
+                        </select>
+                    </label>
+                </div>
+                <div>
+                    <label htmlFor="notes">
+                    Plant Notes:
                         <input
-                        type="text"
-                        name="name"
-                        value={this.state.name}
-                        required
-                        onChange={this.handleInputChangeFor('name')}
+                        type="textbox"
+                        id='notesText'
+                        name="notes"
+                        value={this.state.notes}
+                        onChange={this.handleInputChangeFor('notes')}
                         />
                     </label>
                 </div>

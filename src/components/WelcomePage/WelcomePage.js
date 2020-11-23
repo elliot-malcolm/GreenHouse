@@ -7,7 +7,7 @@ import React from 'react';
 
 const InfoPage = () => (
   <div>
-    <p>Info Page</p>
+    <h1 class="plantEmoji">🌱 Hello World</h1>
   </div>
 );
 

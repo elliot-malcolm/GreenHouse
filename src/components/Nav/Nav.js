@@ -32,7 +32,10 @@ const Nav = (props) => {
         {props.store.user.id && (
           <>
             <Link className="nav-link" to="/info">
-              Info Page
+              Welcome!
+            </Link>
+            <Link id="plantLink" className="nav-link" to="/newplant">
+              New Plant 🌱
             </Link>
             <LogOutButton className="nav-link" />
           </>

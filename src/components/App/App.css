@@ -96,10 +96,12 @@ Form Treatment
 -------------------------------------------------------------------------------- */
 
 .formPanel {
+  text-align: center;
   box-sizing: border-box;
   width: 400px;
   max-width: 100%;
-  padding: 25px;
+  padding: 125px;
+  padding-left: 50px;
   margin: 0 auto 20px;
   background-color: #efefef;
   border-radius: 3px;
@@ -109,4 +111,32 @@ Form Treatment
 input {
   margin: 5px;
   margin-bottom: 10px;
+}
+
+#notesText {
+  width: 375px;
+  height: 25px;
+}
+
+.formInput {
+  text-align: center;
+}
+
+.container {
+  text-align: center;
+  font-family: 'Courier', Courier, monospace;
+}
+
+#helloWorld {
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
+}
+
+#readme {
+  font-size: 300%;
+}
+
+.plantEmoji {
+  font-size: 500%;
+  text-align: center;
 }

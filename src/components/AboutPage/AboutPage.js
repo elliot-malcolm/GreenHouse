@@ -8,7 +8,11 @@ import React from 'react';
 const AboutPage = () => (
   <div className="container">
     <div>
-      <p>This about page is for anyone to read!</p>
+      <h3 class="plantEmoji">🌱</h3><h3 id="readme">
+      <br></br>GreenHouse is a Reactjs based app for digitizing plants and sharing them.
+        <br></br>
+          Status in progress
+      </h3>
     </div>
   </div>
 );

@@ -2,22 +2,22 @@
     font-size: 24px;
     font-weight: 700;
     display: inline-block;
-    color: #f2f2f2;
+    color: #00b436;
     padding-left: 10px;
 }
 
 .nav {
   margin: 0 0 30px;
-  background-color: #00acb0;
+  background-color: rgb(113, 255, 213);
   overflow: hidden;
 }
 
 .nav-link {
   float: left;
-  color: #f2f2f2;
-  background-color: #00acb0;
+  color: #050505;
+  background-color: #33a860;
   text-align: center;
-  padding: 24px 10px;
+  padding: 109px 109px;
   text-decoration: none;
   font-size: 15px;
 
@@ -29,9 +29,10 @@
 }
 
 .nav-link:hover {
-  background-color: #008183;
+  background-color: #38da7b;
 }
 
 .nav-right {
   float: right;
 }
+
