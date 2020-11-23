@@ -14,18 +14,17 @@ Database:
 
 [] Create Plant Object page:
     Input fields:
-    [] Name
-    [] Type: dropdown with options from plant_type db table
-    [] Image Upload (stretch)
-    [] Size: smol, adult, chonky
-    [] special notes input
-    [] ADD to Greenhouse: POST to plants db
-    [] Dashboard route button 
+    [x] Name
+    [x] Type: dropdown with options from plant_type db table
+    [x] Image Upload (stretch)
+    [x] Size: smol, adult, chonky
+    [x] special notes input
+    [x] ADD to Greenhouse: POST to plants db
+    [x] Dashboard route button 
 
 [] GreenHouse Dashboard page:
-    [] Header: GreenHouse
-    [] Plant Divs populated with IMG from plant_type 
-    [] Bottom of page route to Create Plant Object page
+    [x] Header: GreenHouse
+    [x] Plant Divs populated with IMG from plant_type 
 
 [] Plant Details page:
     Display from plants/plant_type db:
@@ -52,3 +51,8 @@ Database:
     [] Trefle API for plant info 
     [] Public List page to showcase garden 
     [] Plant Health History - page to add "Health History" dated data to plant object
+
+
+        // get all plant_type -> arrayreducer for all objects + sagawatcher fetch plant_type info
+        // loop through reducer to display "type" only in dropdown
+        // selection of type inserts full info into local state + other info 
