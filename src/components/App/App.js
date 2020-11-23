@@ -15,10 +15,10 @@ import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 
 import AboutPage from '../AboutPage/AboutPage';
 import UserPage from '../UserPage/UserPage';
-import InfoPage from '../InfoPage/InfoPage';
-import LandingPage from '../LandingPage/LandingPage';
+import InfoPage from '../WelcomePage/WelcomePage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
+import CreatePlantsPage from '../CreatePlantPage/CreatePlantPage';
 
 import './App.css';
 
@@ -89,8 +89,14 @@ class App extends Component {
               // - else shows LandingPage at "/home"
               exact
               path="/home"
-              component={LandingPage}
+              component={LoginPage}
               authRedirect="/user"
+            />
+             <ProtectedRoute
+              exact
+              path="/newplant"
+              component={CreatePlantsPage}
+              // authRedirect="/newplant"
             />
 
             {/* If none of the other routes matched, we will show a 404. */}

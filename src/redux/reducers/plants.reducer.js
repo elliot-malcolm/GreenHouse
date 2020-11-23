@@ -1,0 +1,13 @@
+// import axios from 'axios';
+// import { put, takeLatest } from 'redux-saga/effects';
+
+const plantsReducer = (state = [], action) => {
+    switch(action.type) {
+        case 'SET_PLANTS':
+            return action.payload;
+        default:
+            return state;
+    }
+}
+
+export default plantsReducer;
