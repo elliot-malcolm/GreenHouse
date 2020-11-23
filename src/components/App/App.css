@@ -140,3 +140,20 @@ input {
   font-size: 500%;
   text-align: center;
 }
+
+.plantImage {
+  height: 35%;
+  width: 35%;
+}
+
+#plantLink {
+  height: 18px;
+}
+
+#addPlantForm {
+  text-align: center;
+}
+
+#welcomeList {
+  text-align: center;
+}

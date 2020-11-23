@@ -23,6 +23,7 @@ import CreatePlantsPage from '../CreatePlantPage/CreatePlantPage';
 import './App.css';
 
 class App extends Component {
+
   componentDidMount() {
     this.props.dispatch({ type: 'FETCH_USER' });
   }
@@ -83,7 +84,7 @@ class App extends Component {
               component={RegisterPage}
               authRedirect="/user"
             />
-            <ProtectedRoute
+            {/* <ProtectedRoute
               // with authRedirect:
               // - if logged in, redirects to "/user"
               // - else shows LandingPage at "/home"
@@ -91,7 +92,7 @@ class App extends Component {
               path="/home"
               component={LoginPage}
               authRedirect="/user"
-            />
+            /> */}
              <ProtectedRoute
               exact
               path="/newplant"

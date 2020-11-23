@@ -13,7 +13,7 @@ function* deletePlant(action) {
         })
     }
     } catch(error){
-    console.log('Error in delete item SAGA',error);
+    console.log('Error in delete plant SAGA',error);
   }
 }
 
