@@ -1,29 +1,36 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import mapStoreToProps from '../../redux/mapStoreToProps';
+import DashboardPage from '../DashboardPage/DashboardPage'
+import TypeDisplay from '../TypeDisplay/TypeDisplay'
 
-// This is one of our simplest components
-// It doesn't have local state, so it can be a function component.
-// It doesn't dispatch any redux actions or display any part of redux state
-// or even care what the redux state is, so it doesn't need 'connect()'
+class WelcomePage extends React.Component {
 
-const InfoPage = () => (
-  <div>
-    <h1 class="plantEmoji">🌱 Hello World</h1>
-  </div>
-);
-
-// If you needed to add local state or other things,
-// you can make it a class component like:
-
-/*
-class InfoPage extends React.Component {
+  componentDidMount = () => {
+    this.props.dispatch({
+        type: 'FETCH_PLANT_TYPE'
+    })
+  }
 
   render() {
     return (
-      <div>
-        <p>Info Page</p>
+      <div id="welcomeList">
+          <span
+            className="plantEmoji"
+            role="img"
+            aria-label=""
+            aria-hidden="true"
+            >
+            🌱
+          </span>
+          <DashboardPage />
+          
+          {JSON.stringify(this.props.store)}
+          {JSON.stringify(this.props.store.plantTypeReducer)}
+          <TypeDisplay />
       </div>
     )
   }
 }
-*/
-export default InfoPage;
+
+export default connect(mapStoreToProps)(WelcomePage);

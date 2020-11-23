@@ -26,7 +26,7 @@ router.get('/', (req, res) => {
 //     const queryText = `INSERT INTO "plant_type" (type, scientific_name, image_url)
 //       VALUES ($1, $2, $3);`;
 //     pool
-//       .query(queryText, [name, type, scientific_name, image_url])
+//       .query(queryText, [type, scientific_name, image_url])
 //       .then(() => res.sendStatus(201))
 //       .catch((err) => {
 //         console.log('Plant creation failed ', err);
