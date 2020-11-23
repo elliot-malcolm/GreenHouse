@@ -5,73 +5,58 @@ import mapStoreToProps from '../../redux/mapStoreToProps';
 class CreatePlantPage extends Component {
 
     state = {
+        plant: {
           name: '',
+          type: '', //populated from plant_type table
           size: '',
           notes: '',
           list: '',
-          type: '', //populated from plant_type table
           scientific_name: '', //populated from plant_type table
-          image_url: '', //populated from plant_type table
-        };
+          image_url: '' //populated from plant_type table
+        }
+    }
 
-        // get all plant_type -> arrayreducer for all objects + sagawatcher fetch plant_type info
-        // loop through reducer to display "type" only in dropdown
-        // selection of type inserts full info into local state + other info 
-
-    createPlantObject = (event) => {
-        event.preventDefault(); 
-
+    componentDidMount = () => {
         this.props.dispatch({
-            type: 'ADD_PLANT',
-            payload: {
-              name: this.state.name,
-              type: this.state.type,
-              size: this.state.size,
-              notes: this.state.notes,
-              list: '',
-              type: '', //populated from plant_type table
-              scientific_name: '', //populated from plant_type table
-              image_url: '' // populated from plant_type table 
-            },
-          });
+            type: 'FETCH_PLANTS'
+        })
+    }
+
+    addToGarden = () => {
+        console.log('clicked', this.state);
+        this.props.dispatch({ type: 'ADD_PLANT', payload: this.state.plant})
         };
 
 
-    handleInputChangeFor = (propertyName) => (event) => {
+    handleInputChangeFor = (event, input) => {
         this.setState({
-          [propertyName]: event.target.value,
+            plant: {
+                ...this.state.plant, 
+            [input]: event.target.value
+            }
         });
       };
 
-
-
-
-
     render() {
         return (
-            <form className="formInput" onSubmit={this.createPlantObject}>
-                <div>
-                    <label htmlFor="name">
-                        <h1 class="plantEmoji">🌱</h1>
-                    Plant's Name:
-                        <input
-                        type="text"
-                        name="name"
-                        placeholder="What's your plant's name?"
-                        value={this.state.name}
-                        onChange={this.handleInputChangeFor('name')}
-                        />
-                    </label>
-                </div>
-                <div>
+            // <form className="formInput" onSubmit={this.addToGarden}>
+            <div>
+            <div>
                     <label htmlFor="type">
-                        What type is your plant?:
-                        <select 
+                       What type is your plant?:
+                        <input type="text" placeholder="name" 
+                        onChange={(event) => this.handleInputChangeFor(event, 'name')}/>
+                    </label>
+            </div>
+            <div>
+                   <label htmlFor="type">
+                       What type is your plant?:
+                         <select 
                             name="type" 
                             id="type"
                             placeholder="Optional"
                             value={this.state.type}
-                            onChange={this.handleInputChangeFor('type')}
+                            onChange={(event) => this.handleInputChangeFor(event, 'type')}
                             >
                             <>
                             <option>Got no type?</option>
@@ -81,36 +66,36 @@ class CreatePlantPage extends Component {
                             </>
                         </select>
                     </label>
-                </div>
-                <div>
-                    <label htmlFor="size">
-                    How large is your plant?:
+            </div>
+            <div>
+                     <label htmlFor="size">
+                        How large is your plant?:
                         <select 
                             name="size" 
                             id="size"
                             placeholder="Optional"
                             value={this.state.size}
                             required
-                            onChange={this.handleInputChangeFor('size')}
+                            onChange={(event) => this.handleInputChangeFor(event, 'size')}
                             >
                             <>
                             <option>Plant Size?</option>
-                            <option value='smol'>Smol</option>
-                            <option value='adult'>Medium</option>
-                            <option value='chonk'>Chonky</option>
+                            <option value='Smol'>Smol</option>
+                            <option value='Medium'>Medium</option>
+                            <option value='Chonk'>Chonky</option>
                             </>
                         </select>
                     </label>
                 </div>
                 <div>
-                    <label htmlFor="list">
-                    List your plant?:
-                        <select 
+                     <label htmlFor="list">
+                     List your plant?:
+                         <select 
                             name="list" 
                             id="list"
                             placeholder="Optional"
                             value={this.state.list}
-                            onChange={this.handleInputChangeFor('list')}
+                            onChange={(event) => this.handleInputChangeFor(event, 'list')}
                             >
                             <>
                             <option>List your plant?</option>
@@ -128,15 +113,14 @@ class CreatePlantPage extends Component {
                         id='notesText'
                         name="notes"
                         value={this.state.notes}
-                        onChange={this.handleInputChangeFor('notes')}
+                        onChange={(event) => this.handleInputChangeFor(event, 'notes')}
                         />
                     </label>
                 </div>
-            </form>
+                <button onClick={this.addToGarden}>Add to Garden</button>
+            </div>
         );
     }
 }
-
-const mapStateToProps = (reduxGo) => ({reduxGo})
 
 export default connect(mapStoreToProps)(CreatePlantPage);
