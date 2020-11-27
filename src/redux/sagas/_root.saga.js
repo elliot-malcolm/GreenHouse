@@ -6,7 +6,7 @@ import addPlantSaga from './addPlant.saga'
 import plantsSaga from './plants.saga';
 import deletePlantSaga from './deletePlant.saga'
 import plantTypeSaga from './plantType.saga';
-import updatePlantSaga from './plantType.saga';
+import updatePlantSaga from './updatePlant.saga';
 
 // rootSaga is the primary saga.
 // It bundles up all of the other sagas so our project can use them.

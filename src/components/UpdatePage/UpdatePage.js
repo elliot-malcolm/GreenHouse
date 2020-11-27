@@ -12,9 +12,9 @@ class UpdatePlantsPage extends Component {
           size: '',
           notes: '',
           list: '',
-          type: '', //populated from plant_type table
-          sci_name: '', //populated from plant_type table
-          img_url: '', //populated from plant_type table
+          type: '', 
+          sci_name: '', 
+          img_url: '',
           id: '',
             }
         }
@@ -32,11 +32,12 @@ class UpdatePlantsPage extends Component {
     }
 
     updatePlant = () => {
-        console.log(this.state)
+
+        console.log('update plant payload', this.state)
     
         this.props.dispatch({
           type: 'UPDATE_PLANT',
-          payload: this.state
+          payload: {data: this.state.plant, id: this.state.plant.id} 
         })
         this.props.history.push('/info')
       }

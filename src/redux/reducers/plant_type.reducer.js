@@ -1,5 +1,3 @@
-// import axios from 'axios';
-// import { put, takeLatest } from 'redux-saga/effects';
 
 const plantTypeReducer = (state = [], action) => {
     switch(action.type) {

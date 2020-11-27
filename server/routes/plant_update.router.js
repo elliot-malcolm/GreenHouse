@@ -2,9 +2,9 @@ const express = require('express');
 const pool = require('../modules/pool');
 const router = express.Router();
 
-router.put('/', (req, res) => {
-  console.log(req.body);
-    // U IN CRUD
+router.put('/:id', (req, res, next) => {
+  console.log('put router body + params', req.body, req.params);
+ 
     const name = req.body.name;
     const type = req.body.type
     const size = req.body.size
@@ -12,13 +12,10 @@ router.put('/', (req, res) => {
     const list = req.body.list
     const sci_name = req.body.sci_name
     const img_url = req.body.img_url
-    const id = req.body.id
-  
-  // console.log('name, size', req.body.name, req.body.size);
-
+    const id = req.params.id
 
   if (req.isAuthenticated()) {
-      // if (req.isAuthenticated()) {
+
         const queryText = 
         `UPDATE "plant" SET 
           "name" = $1, 
@@ -29,11 +26,6 @@ router.put('/', (req, res) => {
           "sci_name" = $6, 
           "img_url" = $7, 
         WHERE "id" = $8;`;
-        // let testQuery = `
-        // DELETE FROM "plant" 
-        //   WHERE "id" = $1
-        // `;
-        // AND   "user_id" = $2
         pool.query(queryText, [name, type, size, notes, list, sci_name, img_url, id]).then((result) => {
           console.log('success updating plant', result);
           res.sendStatus(200);
@@ -41,8 +33,8 @@ router.put('/', (req, res) => {
           console.log('error in updating plant', error);
           res.sendStatus(500);
         })
-      // } else {
-      //   res.sendStatus(403);
+      } else {
+        res.sendStatus(403);
     };
   });
 

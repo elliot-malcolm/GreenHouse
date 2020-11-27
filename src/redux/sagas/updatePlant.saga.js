@@ -1,17 +1,12 @@
 import axios from 'axios';
-import { put, takeEvery } from 'redux-saga/effects';
+import { put, takeEvery, takeLatest } from 'redux-saga/effects';
 
-//send axios request to shelf.router to get all items from shelf DB
 function* updatePlant(action) {
+  console.log('saga firing', action.payload);
   try{
-    const results = yield axios.put(`/api/plantupdate/${action.payload}`)  
-    if (results.data.rowCount === 0) {
-        alert(`Failed to update!`)
-    } else {
-        yield put({
-            type: "FETCH_PLANTS"
-        })
-    }
+  
+    yield axios.put(`/api/plant/${action.payload.id}`, action.payload.data); 
+
     } catch(error){
     console.log('Error in update plant SAGA',error);
   }
