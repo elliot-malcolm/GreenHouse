@@ -4,8 +4,8 @@ import { put, takeEvery } from 'redux-saga/effects';
 //send axios request to plant.router to get all plants from DB
 function* fetchPlants() {
   try{
-    const plantsResponse = yield axios.get(`/api/plant`)
-    yield put({type: `SET_PLANTS`, payload: plantsResponse.data})
+    const plantResponse = yield axios.get(`/api/plant`)
+    yield put({type: `SET_PLANTS`, payload: plantResponse.data})
   } catch(error){
     console.log('Error in fetch',error);
   }
