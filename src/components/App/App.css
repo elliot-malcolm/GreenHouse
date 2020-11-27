@@ -150,9 +150,6 @@ input {
   height: 18px;
 }
 
-#addPlantForm {
-  text-align: center;
-}
 
 #welcomeList {
   text-align: center;
@@ -160,9 +157,24 @@ input {
 
 .plantDiv {
   display: inline-block;
-  max-width: 500px;
+  position: relative;
+  margin-left: -80px;
+  height: 300px;
+  width: 300px;
+  font-size: 80%;
+}
+
+.plantDiv img {
+  float: inline-start;
+  max-width: 100px;
+  max-height: 100px;
 }
 
 ul{
   list-style-type: none;
+}
+
+#addPlantForm {
+  align-content: left;
+  padding-left: 400px;
 }

@@ -19,6 +19,7 @@ import InfoPage from '../WelcomePage/WelcomePage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import CreatePlantsPage from '../CreatePlantPage/CreatePlantPage';
+import UpdatePage from '../UpdatePage/UpdatePage';
 
 import './App.css';
 
@@ -97,6 +98,9 @@ class App extends Component {
               exact
               path="/newplant"
               component={CreatePlantsPage}
+              // authRedirect="/newplant"
+            />
+            <ProtectedRoute exact path="/updateplant/:id" component={UpdatePage}
               // authRedirect="/newplant"
             />
 
