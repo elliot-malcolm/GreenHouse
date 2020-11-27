@@ -21,16 +21,16 @@ router.post('/', (req, res, next) => {
     const size = req.body.size
     const notes = req.body.notes
     const list = req.body.list
-    const sci_name = req.body.scientific_name
-    const image_url = req.body.image_url
+    const sci_name = req.body.sci_name
+    const img_url = req.body.img_url
   
   console.log('name, size', req.body.name, req.body.size);
 
   if (req.isAuthenticated()) {
-    const queryText = `INSERT INTO "plant" (name, type, size, notes, list, sci_name, image_url)
+    const queryText = `INSERT INTO "plant" (name, type, size, notes, list, sci_name, img_url)
       VALUES ($1, $2, $3, $4, $5, $6, $7);`;
     pool
-      .query(queryText, [name, type, size, notes, list, sci_name, image_url])
+      .query(queryText, [name, type, size, notes, list, sci_name, img_url])
       .then(() => res.sendStatus(201))
       .catch((err) => {
         console.log('Plant creation failed ', err);

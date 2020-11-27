@@ -1,7 +1,6 @@
 import axios from 'axios';
 import { put, takeLatest } from 'redux-saga/effects';
 
-
 function* addPlant(action) {
   try {
         // passes the plant to the server

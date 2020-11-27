@@ -2,24 +2,29 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 
+
 class CreatePlantPage extends Component {
 
     state = {
         plant: {
           name: '',
-          type: '', //populated from plant_type table
           size: '',
           notes: '',
           list: '',
-          scientific_name: '', //populated from plant_type table
-          image_url: '' //populated from plant_type table
+          type: '', //populated from plant_type table
+          sci_name: '', //populated from plant_type table
+          img_url: '' //populated from plant_type table
+            }
         //   user_id:''
         }
-    }
+    
 
     componentDidMount = () => {
         this.props.dispatch({
             type: 'FETCH_PLANTS'
+        })
+        this.props.dispatch({
+            type: 'FETCH_PLANT_TYPE'
         })
     }
 
@@ -29,44 +34,69 @@ class CreatePlantPage extends Component {
         };
 
 
-    handleInputChangeFor = (event, input) => {
-        this.setState({
+    handleInputChangeForType = (event, input) => {
+        for (let plantType of this.props.store.plantTypeReducer) {
+            console.log(plantType.id);
+            let plantObj = {}
+            if (plantType.id === Number(event.target.value)) {
+                plantObj = plantType 
+                console.log('plantobj', plantObj);
+                this.setState({
+                    plant: {
+                        ...this.state.plant, 
+                    type: plantObj.type,
+                    sci_name: plantObj.sci_name,
+                    img_url: plantObj.img_url,
+                    }
+                });
+            }
+        }
+    };
+    
+      handleInputChangeFor = (event, input) => {
+            this.setState({
             plant: {
                 ...this.state.plant, 
             [input]: event.target.value
             }
         });
-      };
+        console.log('event value', event.target.value, JSON.stringify(event.target.value));
+      }
 
     render() {
         return (
-            // <form className="formInput" onSubmit={this.addToGarden}>
         <div id="addPlantForm">
             <div>
-                    <label htmlFor="type">
-                       What type is your plant?:
+                    <label htmlFor="name">
+                    What should we call your plant?:
                         <input type="text" placeholder="name" 
                         onChange={(event) => this.handleInputChangeFor(event, 'name')}/>
                     </label>
             </div>
             <div>
-                   <label htmlFor="type">
-                       What type is your plant?:
-                         <select 
-                            name="type" 
-                            id="type"
-                            placeholder="Optional"
-                            value={this.state.type}
-                            onChange={(event) => this.handleInputChangeFor(event, 'type')}
-                            >
-                            <>
-                            <option>Got no type?</option>
-                            <option value='Monstera'>Monstera</option>
-                            <option value='BoP'>BoP</option>
-                            <option value='Aloe'>Aloe</option>
-                            </>
-                        </select>
-                    </label>
+                <label htmlFor="type">
+                   <div>
+                   What type is your plant?:
+                            <select 
+                                name="type"
+                                id="type"
+                                onChange={(event) => this.handleInputChangeForType(event, 'type.id')}>
+                                <option>Got no type?</option>
+                            {this.props.store.plantTypeReducer.map((plantType) => {
+                                // let plantValue = { 
+                                //     type: plantType.type,
+                                //     sci_name: plantType.sci_name,
+                                //     img_url: plantType.img_url
+                                // }
+                                return (
+                            <option value={plantType.id} key={plantType.id}>{plantType.type}</option>
+                            
+                            )
+                            })}
+                            </select>
+                        
+                    </div>
+                </label>
             </div>
             <div>
                      <label htmlFor="size">
@@ -75,7 +105,6 @@ class CreatePlantPage extends Component {
                             name="size" 
                             id="size"
                             placeholder="Optional"
-                            value={this.state.size}
                             required
                             onChange={(event) => this.handleInputChangeFor(event, 'size')}
                             >
@@ -95,7 +124,6 @@ class CreatePlantPage extends Component {
                             name="list" 
                             id="list"
                             placeholder="Optional"
-                            value={this.state.list}
                             onChange={(event) => this.handleInputChangeFor(event, 'list')}
                             >
                             <>
@@ -113,7 +141,6 @@ class CreatePlantPage extends Component {
                         type="textbox"
                         id='notesText'
                         name="notes"
-                        value={this.state.notes}
                         onChange={(event) => this.handleInputChangeFor(event, 'notes')}
                         />
                     </label>
