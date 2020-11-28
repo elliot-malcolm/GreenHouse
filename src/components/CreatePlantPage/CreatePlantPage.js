@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
+import { withRouter } from 'react-router-dom';
 
 
 class CreatePlantPage extends Component {
@@ -31,6 +32,7 @@ class CreatePlantPage extends Component {
     addToGarden = () => {
         console.log('clicked', this.state);
         this.props.dispatch({ type: 'ADD_PLANT', payload: this.state.plant})
+        this.props.history.push(`/info`)
         };
 
 
@@ -83,11 +85,6 @@ class CreatePlantPage extends Component {
                                 onChange={(event) => this.handleInputChangeForType(event, 'type.id')}>
                                 <option>Got no type?</option>
                             {this.props.store.plantTypeReducer.map((plantType) => {
-                                // let plantValue = { 
-                                //     type: plantType.type,
-                                //     sci_name: plantType.sci_name,
-                                //     img_url: plantType.img_url
-                                // }
                                 return (
                             <option value={plantType.id} key={plantType.id}>{plantType.type}</option>
                             
@@ -151,4 +148,4 @@ class CreatePlantPage extends Component {
     }
 }
 
-export default connect(mapStoreToProps)(CreatePlantPage);
+export default withRouter(connect(mapStoreToProps)(CreatePlantPage));
