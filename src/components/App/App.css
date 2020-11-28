@@ -146,28 +146,34 @@ input {
   width: 35%;
 }
 
-#plantLink {
-  height: 18px;
-}
-
 
 #welcomeList {
   text-align: center;
 }
 
 .plantDiv {
-  display: inline-block;
+  border: aquamarine;
+  border-width: 2px;
+  border-style: solid;
+  display: block;
   position: relative;
-  margin-left: -80px;
+  padding-top: 10px;
+  margin-left: 40%;
   height: 300px;
   width: 300px;
   font-size: 80%;
 }
 
+.plantDiv ul {
+  font-size: 20px;
+  margin-right: 0;
+}
+
 .plantDiv img {
-  float: inline-start;
-  max-width: 100px;
-  max-height: 100px;
+  float: left;
+  position: relative;
+  max-width: 400px;
+  max-height: 400px;
 }
 
 ul{

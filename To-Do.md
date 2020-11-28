@@ -26,7 +26,7 @@ Database:
     [x] Header: GreenHouse
     [x] Plant Divs populated with IMG from plant_type 
     [] EDIT button
-    [] DELETE button and delete request
+    [x] DELETE button and delete request
 
 [] Edit Plant Details Page:
     PUT edits on fields:
@@ -36,12 +36,13 @@ Database:
     [] Special Notes
     [] Save Changes button for PUT request
 
+    saga that loops through fetched plants to match against ID, set to Reducer for use
+
 [] Stretch
     [] Public List page to showcase garden 
-    [] Plant Health History - page to add "Health History" dated data to plant object
     [] Public commenting feature 
     [] Cloud Storage for plant image database 
-    [] Cloud Storage for personalized image uploads
+    [] Plant Health History - page to add "Health History" dated data to plant object
     [] Trefle API for plant info 
 
 
