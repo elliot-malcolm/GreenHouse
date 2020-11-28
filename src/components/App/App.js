@@ -20,6 +20,7 @@ import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import CreatePlantsPage from '../CreatePlantPage/CreatePlantPage';
 import UpdatePage from '../UpdatePage/UpdatePage';
+import ListPage from '../ListPage/ListPage';
 
 import './App.css';
 
@@ -102,6 +103,14 @@ class App extends Component {
             />
             <ProtectedRoute exact path="/updateplant/:id" component={UpdatePage}
               // authRedirect="/newplant"
+            />
+               <ProtectedRoute
+              // with authRedirect:
+              // - if logged in, redirects to "/user"
+              // - else shows RegisterPage at "/registration"
+              exact
+              path="/list"
+              component={ListPage}
             />
 
             {/* If none of the other routes matched, we will show a 404. */}
