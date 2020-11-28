@@ -47,7 +47,7 @@ class DashboardPage extends Component {
     render() {
         return (
           <div>
-            {this.props.store.plantsReducer.map( plant => {
+            {this.props.store.plants.map( plant => {
             if (plant.user_id == this.props.store.user.id) {
               return (
                 <>
@@ -58,13 +58,13 @@ class DashboardPage extends Component {
                 <li>Name: {plant.name}</li>
                 <li>Type: {plant.type}</li>
                 <li>Size: {plant.size}</li>
-                <li>Notes: {plant.notes}</li>
                 {plant.list === true ?
                 <li>List?: Yes</li>
                 : 
                 <li>List?: No</li>
               }
                 <li>Sci Name: {plant.sci_name}</li>
+                <li>Notes: {plant.notes}</li>
               </ul>
               <button id="deleteBtn" onClick={(event) => this.deletePlant(event, plant.id)}>Delete Plant</button>
               <button id="editBtn" onClick={() => this.updateRoute(plant.id)}>Edit Plant</button>
