@@ -17,9 +17,9 @@ class UserPage extends Component {
         🌱
     </span>
         <h1 id="welcome">Welcome, {this.props.store.user.username}!</h1>
-        <h2>Your Name is: {this.props.store.user.full_name}</h2>
-        <h2>Your ID is: {this.props.store.user.id}</h2>
-        <h2>Your Favorite Plant Type is: {this.props.store.user.favorite_plant}</h2>
+        {/* <h2>Your Name is: {this.props.store.user.full_name}</h2>
+        <h2>Your ID is: {this.props.store.user.id}</h2> */}
+        <h2>Your Favorite Plant is: {this.props.store.user.favorite_plant}</h2>
         <h2>Your Experience Level is: {this.props.store.user.experience_level}</h2>
       </div>
     );
