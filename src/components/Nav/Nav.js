@@ -31,16 +31,16 @@ const Nav = (props) => {
         {/* Show the link to the info page and the logout button if the user is logged in */}
         {props.store.user.id && (
           <>
-            <Link className="nav-link" to="/info">
+              <Link className="nav-link" to="/info">
               MyGarden
-            </Link>
-            <Link id="plantLink" className="nav-link" to="/newplant">
+              </Link>
+              <Link id="plantLink" className="nav-link" to="/newplant">
               New Plant  
               </Link>
-                <Link className="nav-link" to="/about">
-          About
-        </Link>
-                    <LogOutButton className="nav-link" />
+              <Link className="nav-link" to="/about">
+              About
+              </Link>
+              <LogOutButton id="logOutBtn" className="nav-link" />
                   </>
                 )}
         {/* Always show this link since the about page is not protected */}
