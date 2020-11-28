@@ -67,6 +67,17 @@ class CreatePlantPage extends Component {
 
     render() {
         return (
+        <>
+            <div className="container">
+                 <span
+                className="plantEmoji"
+                role="img"
+                aria-label=""
+                aria-hidden="true"
+                >
+                🌱
+                </span>
+            </div>
         <div id="addPlantForm">
             <div>
                     <label htmlFor="name">
@@ -144,6 +155,7 @@ class CreatePlantPage extends Component {
                 </div>
                 <button onClick={this.addToGarden}>Add to Garden</button>
         </div>
+        </>
         );
     }
 }

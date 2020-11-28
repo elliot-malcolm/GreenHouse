@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 import { withRouter } from 'react-router-dom';
+import './ListPage.css'
 
 class ListPage extends Component {
 
@@ -28,7 +29,20 @@ class ListPage extends Component {
 
     render() {
         return (
-          <div>
+            
+        <div>  <div className="gardenListDiv">
+                    <span
+                    className="plantEmoji"
+                    role="img"
+                    aria-label=""
+                    aria-hidden="true"
+                    >
+                    🌱
+                    </span>
+                
+                    <h1>Plant List</h1>
+                    </div>
+
             {this.props.store.plantsReducer.map( plant => {
               return (
             <>
