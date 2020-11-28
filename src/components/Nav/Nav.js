@@ -41,15 +41,15 @@ const Nav = (props) => {
               <Link className="nav-link" to="/list">
               Plants List
               </Link>
-              <Link className="nav-link" to="/about">
+              {/* <Link className="nav-link" to="/about">
               About
-              </Link>
+              </Link> */}
               {/* <AccountButton id="accountBtn" className="nav-link" /> */}
               <LogOutButton id="logOutBtn" className="nav-link" />
              
                   </>
                 )}
-                     <Link className="nav-link" to="/about"></Link>
+                     <Link className="nav-link" to="/about">About</Link>
         {/* Always show this link since the about page is not protected */}
       </div>
     </div>
