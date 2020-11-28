@@ -51,28 +51,30 @@ class ListPage extends Component {
               
                 {plant.list === true ? 
                 <div key={plant.id} className="plantDiv">
-                <ul>
-                <div>
-                    <div>
-                        <img className="plantImage" src={plant.img_url} alt={plant.name}/></div><li>Name: {plant.name}</li>
-                <li>Type: {plant.type}</li>
-                <li>Size: {plant.size}</li>
-                <li>Notes: {plant.notes}</li>
-                <li>Scientific Name: {plant.sci_name}</li>
-                <br></br>
-                <label htmlFor="comment">
-                    Comment:
-                        <input type="text" placeholder="comment" 
-                        value={this.state.comment}
-                        onChange={(event) => this.handleChange(event, 'comment')}/>
-                    </label>
-                    <button >Submit Comment</button>
-                </div>
-                </ul>
-                </div>
-                : 
-                <>
-                </>
+                    <ul>
+                        <div>
+                            <div>
+                                <img className="plantImage" src={plant.img_url} alt={plant.name}/>
+                            </div>
+                                    <li>Name: {plant.name}</li>
+                                    <li>Type: {plant.type}</li>
+                                    <li>Size: {plant.size}</li>
+                                    <li>Notes: {plant.notes}</li>
+                                    <li>Scientific Name: {plant.sci_name}</li>
+                                    <br></br>
+                                    <label htmlFor="comment">
+                                        Comment:
+                                            <input type="text" placeholder="comment" 
+                                            value={this.state.comment}
+                                            onChange={(event) => this.handleChange(event, 'comment')}/>
+                                    </label>
+                                 <button >Submit Comment</button>
+                        </div>
+                    </ul>
+                    </div>
+                    : 
+                    <>
+                    </>
                 }
               </div>
               
