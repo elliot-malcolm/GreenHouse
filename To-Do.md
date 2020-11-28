@@ -25,18 +25,35 @@ Database:
 [] GreenHouse Dashboard page:
     [x] Header: GreenHouse
     [x] Plant Divs populated with IMG from plant_type 
-    [] EDIT button
+    [x] EDIT button
     [x] DELETE button and delete request
 
-[] Edit Plant Details Page:
+[x] Edit Plant Details Page:
     PUT edits on fields:
-    [] Plant Name
-    [] Plant Type
-    [] Size
-    [] Special Notes
-    [] Save Changes button for PUT request
+    [x] Plant Name
+    [x] Plant Type
+    [x] Size
+    [x] Special Notes
+    [x] Save Changes button for PUT request
 
-    saga that loops through fetched plants to match against ID, set to Reducer for use
+Update Database:
+
+    [x] reference "plant" through "user_id"
+    [x] update "plant" routes and states to accommodate user_id
+    [x] conditional render unique user gardens
+    
+    [] reference "comment" through "plant"
+    [] build comment routes
+
+
+Stretch
+[] Plant List
+    [x] map through reducer selecting boolean true
+    [x] display to public list boolean TRUE
+    [] allow comments
+        []comments saga
+        []comments put route
+        []comments database 
 
 [] Stretch
     [] Public List page to showcase garden 
