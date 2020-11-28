@@ -14,9 +14,9 @@ class CreatePlantPage extends Component {
           list: '',
           type: '', 
           sci_name: '', 
-          img_url: '' 
+          img_url: '', 
+          user_id: this.props.store.user.id
             }
-        //   user_id:''
         }
     
 
@@ -27,12 +27,23 @@ class CreatePlantPage extends Component {
         this.props.dispatch({
             type: 'FETCH_PLANT_TYPE'
         })
+        this.props.dispatch({
+            type: 'FETCH_USER'
+        })
+        console.log(this.state.user_id);
     }
 
     addToGarden = () => {
         console.log('clicked', this.state);
+        // this.setState({
+        //     // ...this.state,
+        //     plant: {
+        //         user_id: (this.props.store.user.id)
+        //     }
+        // })
         this.props.dispatch({ type: 'ADD_PLANT', payload: this.state.plant})
         this.props.history.push(`/info`)
+        console.log(this.state.plant);
         };
 
 
@@ -67,7 +78,9 @@ class CreatePlantPage extends Component {
 
     render() {
         return (
+           
         <>
+        {JSON.stringify(this.state)}
         {/* <div> */}
             <div className="container">
                  <span

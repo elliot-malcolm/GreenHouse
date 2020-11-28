@@ -48,6 +48,7 @@ class DashboardPage extends Component {
         return (
           <div>
             {this.props.store.plantsReducer.map( plant => {
+            if (plant.user_id == this.props.store.user.id) {
               return (
                 <>
               <div key={plant.id} className="plantDiv">
@@ -71,8 +72,8 @@ class DashboardPage extends Component {
               </div>
               </>
               );
-            })}
-            
+            }})}
+          
           </div>
         );
     }
