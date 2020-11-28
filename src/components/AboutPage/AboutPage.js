@@ -17,9 +17,10 @@ const AboutPage = () => (
         🌱
     </span>
       <h3 id="readme">
-      <br></br>GreenHouse is a Reactjs based app for digitizing plants and sharing them.
+      <br></br>GreenHouse is a Reactjs-based app
+      <br></br>for digitizing plants<br></br>and sharing them.
         <br></br>
-          Status in progress
+
       </h3>
     </div>
   </div>
