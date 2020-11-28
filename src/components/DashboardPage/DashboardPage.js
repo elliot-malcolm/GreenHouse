@@ -52,6 +52,7 @@ class DashboardPage extends Component {
                 <>
               <div key={plant.id} className="plantDiv">
               <div><img className="plantImage" src={plant.img_url} alt={plant.name}/></div>
+              <div className='plantList'>
               <ul>
                 <li>Name: {plant.name}</li>
                 <li>Type: {plant.type}</li>
@@ -66,6 +67,7 @@ class DashboardPage extends Component {
               </ul>
               <button id="deleteBtn" onClick={(event) => this.deletePlant(event, plant.id)}>Delete Plant</button>
               <button id="editBtn" onClick={() => this.updateRoute(plant.id)}>Edit Plant</button>
+              </div>
               </div>
               </>
               );

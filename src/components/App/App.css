@@ -7,6 +7,7 @@ body,
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0px;
+  background-color: rgb(4, 159, 40);
 }
 
 img {
@@ -127,6 +128,8 @@ input {
   font-family: 'Courier', Courier, monospace;
 }
 
+/* // Dashboard treatment */
+
 #helloWorld {
   font-family: 'Courier New', Courier, monospace;
   text-align: center;
@@ -146,41 +149,43 @@ input {
   width: 35%;
 }
 
-
-#welcomeList {
-  text-align: center;
-}
-
 .plantDiv {
   border: aquamarine;
   border-width: 2px;
   border-style: solid;
-  display: block;
+  display: inline-block;
   position: relative;
+  padding: 50px;
   padding-top: 10px;
-  margin-left: 40%;
+  margin-left: auto;
   height: 300px;
   width: 300px;
   font-size: 80%;
+  /* vertical-align: middle; */
 }
 
 .plantDiv ul {
   font-size: 20px;
   margin-right: 0;
+  
 }
 
 .plantDiv img {
+  padding-top: 20%;
   float: left;
   position: relative;
   max-width: 400px;
   max-height: 400px;
 }
 
-ul{
+.plantDiv ul{
   list-style-type: none;
+  padding: 20px;
+
 }
 
 #addPlantForm {
   align-content: left;
   padding-left: 400px;
 }
+
