@@ -7,6 +7,7 @@ import plantsSaga from './plants.saga';
 import deletePlantSaga from './deletePlant.saga'
 import plantTypeSaga from './plantType.saga';
 import updatePlantSaga from './updatePlant.saga';
+import findPlantSaga from './findPlantById.saga';
 
 // rootSaga is the primary saga.
 // It bundles up all of the other sagas so our project can use them.
@@ -24,6 +25,7 @@ export default function* rootSaga() {
     plantsSaga(),
     deletePlantSaga(),
     plantTypeSaga(),
-    updatePlantSaga()
+    updatePlantSaga(),
+    findPlantSaga()
   ]);
 }
