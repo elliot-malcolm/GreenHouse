@@ -14,6 +14,9 @@ class DashboardPage extends Component {
     this.props.dispatch({
       type: 'FETCH_PLANTS'
   })
+    // setState({
+
+    // })
   }
   
   // componentDidMount = () => {
@@ -34,13 +37,16 @@ class DashboardPage extends Component {
   }
 
   updateRoute = ( param ) => {
-    this.props.history.push(`/updateplant/${param}`);
+    // this.props.history.push(`/updateplant/${param}`);
+    this.props.dispatch({
+      type: 'FETCH_PLANT_BY_ID', payload: {param}, history: this.props.history 
+    })
 }
 
 
     render() {
         return (
-            <div>
+          <div>
             {this.props.store.plantsReducer.map( plant => {
               return (
               <div key={plant.id} className="plantDiv">
@@ -49,15 +55,19 @@ class DashboardPage extends Component {
                 <li>Type: {plant.type}</li>
                 <li>Size: {plant.size}</li>
                 <li>Notes: {plant.notes}</li>
-                <li>List?: {plant.list}</li>
+                {plant.list === true ?
+                <li>List?: Yes</li>
+                : 
+                <li>List?: No</li>
+              }
                 <li>Sci Name: {plant.sci_name}</li>
-                </ul>
-
-                <button id="deleteBtn" onClick={(event) => this.deletePlant(event, plant.id)}>Delete Plant</button>
-                <button id="editBtn" onClick={() => this.updateRoute(plant.id)}>Edit Plant</button>
+              </ul>
+              <button id="deleteBtn" onClick={(event) => this.deletePlant(event, plant.id)}>Delete Plant</button>
+              <button id="editBtn" onClick={() => this.updateRoute(plant.id)}>Edit Plant</button>
               </div>
               );
             })}
+            
           </div>
           // <div>
           //    <ul>

@@ -11,9 +11,9 @@ class CreatePlantPage extends Component {
           size: '',
           notes: '',
           list: '',
-          type: '', //populated from plant_type table
-          sci_name: '', //populated from plant_type table
-          img_url: '' //populated from plant_type table
+          type: '', 
+          sci_name: '', 
+          img_url: '' 
             }
         //   user_id:''
         }

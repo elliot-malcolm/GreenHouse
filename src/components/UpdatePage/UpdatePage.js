@@ -8,33 +8,35 @@ class UpdatePlantsPage extends Component {
 
     state = {
         plant: {
-          name: '',
-          size: '',
-          notes: '',
-          list: '',
-          type: '', 
-          sci_name: '', 
-          img_url: '',
-          id: '',
+          name: this.props.store.plantByIdReducer[0].name,
+          size: this.props.store.plantByIdReducer[0].size,
+          notes: this.props.store.plantByIdReducer[0].notes,
+          list: this.props.store.plantByIdReducer[0].list,
+          type: this.props.store.plantByIdReducer[0].type,
+          sci_name: this.props.store.plantByIdReducer[0].sci_name,
+          img_url: this.props.store.plantByIdReducer[0].img_url,
+          id: this.props.store.plantByIdReducer[0].id
             }
         }
     
 
     componentDidMount = () => {
-        console.log(this.props.match.params.id);
-        this.setState({
-            plant: {
-                id: this.props.match.params.id
-            }
-        }
-        )
+
+        console.log(this.props.store.plantByIdReducer[0].name);
+        console.log(this.state.plant.name);
+        this.props.dispatch({
+            type: 'FETCH_PLANTS'
+        })
         console.log();
     }
+
+    // componentWillUpdate = () => { 
+
+    // }
 
     updatePlant = () => {
 
         console.log('update plant payload', this.state)
-    
         this.props.dispatch({
           type: 'UPDATE_PLANT',
           payload: {data: this.state.plant, id: this.state.plant.id} 
@@ -73,29 +75,27 @@ class UpdatePlantsPage extends Component {
 
     render() {
         return (
+            
         <div id="addPlantForm">
             <div>
+                <br></br>
                     <label htmlFor="name">
-                    What should we call your plant?:
-                        <input type="text" placeholder="name" 
+                    Plant Name:
+                        <input type="text" defaultValue={this.state.plant.name}
                         onChange={(event) => this.handleInputChangeFor(event, 'name')}/>
                     </label>
             </div>
             <div>
                 <label htmlFor="type">
                    <div>
-                   What type is your plant?:
+                   Plant Type:
                             <select 
                                 name="type"
                                 id="type"
                                 onChange={(event) => this.handleInputChangeForType(event, 'type.id')}>
+                                <option defaultValue='selected'>{this.state.plant.type}</option>
                                 <option>Got no type?</option>
                             {this.props.store.plantTypeReducer.map((plantType) => {
-                                // let plantValue = { 
-                                //     type: plantType.type,
-                                //     sci_name: plantType.sci_name,
-                                //     img_url: plantType.img_url
-                                // }
                                 return (
                             <option value={plantType.id} key={plantType.id}>{plantType.type}</option>
                             
@@ -108,16 +108,17 @@ class UpdatePlantsPage extends Component {
             </div>
             <div>
                      <label htmlFor="size">
-                        How large is your plant?:
+                        Plant Size:
                         <select 
                             name="size" 
                             id="size"
                             placeholder="Optional"
                             required
+
                             onChange={(event) => this.handleInputChangeFor(event, 'size')}
                             >
                             <>
-                            <option>Plant Size?</option>
+                            <option defaultValue='selected'>{this.state.plant.size}</option>
                             <option value='Smol'>Smol</option>
                             <option value='Medium'>Medium</option>
                             <option value='Chonk'>Chonky</option>
@@ -135,7 +136,11 @@ class UpdatePlantsPage extends Component {
                             onChange={(event) => this.handleInputChangeFor(event, 'list')}
                             >
                             <>
-                            <option>List your plant?</option>
+                            {this.state.plant.list === true ?
+                            <option defaultValue='selected'>Yes</option>
+                            :   
+                            <option defaultValue='selected'>No</option>
+                            }
                             <option value='Yes'>Yes</option>
                             <option value='No'>No</option>
                             </>
@@ -149,6 +154,7 @@ class UpdatePlantsPage extends Component {
                         type="textbox"
                         id='notesText'
                         name="notes"
+                        defaultValue={this.state.plant.notes}
                         onChange={(event) => this.handleInputChangeFor(event, 'notes')}
                         />
                     </label>
