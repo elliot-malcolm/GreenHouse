@@ -13,6 +13,7 @@ const userRouter = require('./routes/user.router');
 const plantRouter = require('./routes/plant.router');
 const plantTypeRouter = require('./routes/plant_type.router');
 // const plantUpdateRouter = require('./routes/plant_update.router')
+const commentRouter = require ('./routes/comments.router')
 
 // Body parser middleware
 app.use(bodyParser.json());
@@ -29,7 +30,7 @@ app.use(passport.session());
 app.use('/api/user', userRouter);
 app.use('/api/plant', plantRouter);
 app.use('/api/plantType', plantTypeRouter);
-// app.use('/api/plantupdate', plantUpdateRouter);
+app.use('/api/comment', commentRouter);
 
 // Serve static files
 app.use(express.static('build'));

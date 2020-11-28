@@ -16,17 +16,18 @@ router.get('/', (req, res) => {
 
  ////
 
- router.post('/', (req, res, next) => {
-      const comment = req.body.comment
-      const plant_id = req.body.user_id
+ router.post('/', (req, res) => {
+      const commentPass = req.body.comment
+      const commentor_name = req.body.commentor_name
+      const plant_id = req.body.plant_id
     
     console.log('name, size', req.body.name, req.body.size);
   
     if (req.isAuthenticated()) {
-      const queryText = `INSERT INTO "plant" (name, type, size, notes, list, sci_name, img_url, user_id)
-        VALUES ($1, $2, $3, $4, $5, $6, $7, $8);`;
+      const queryText = `INSERT INTO "comments" (comment, commentor_name, plant_id)
+        VALUES ($1, $2, $3);`;
       pool
-        .query(queryText, [name, type, size, notes, list, sci_name, img_url, user_id])
+        .query(queryText, [commentPass, commentor_name, plant_id])
         .then(() => res.sendStatus(201))
         .catch((err) => {
           console.log('Plant creation failed ', err);
@@ -36,3 +37,5 @@ router.get('/', (req, res) => {
     });
    
     ////
+
+    module.exports = router;
