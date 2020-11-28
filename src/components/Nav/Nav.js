@@ -32,26 +32,18 @@ const Nav = (props) => {
         {props.store.user.id && (
           <>
             <Link className="nav-link" to="/info">
-              Welcome!
+              MyGarden
             </Link>
             <Link id="plantLink" className="nav-link" to="/newplant">
               New Plant  
-              <span
-                className="plantEmoji"
-                role="img"
-                aria-label=""
-                aria-hidden="true"
-                >
-                    🌱
-              </span>
-                    </Link>
+              </Link>
+                <Link className="nav-link" to="/about">
+          About
+        </Link>
                     <LogOutButton className="nav-link" />
                   </>
                 )}
         {/* Always show this link since the about page is not protected */}
-        <Link className="nav-link" to="/about">
-          About
-        </Link>
       </div>
     </div>
   );
