@@ -110,12 +110,12 @@ class RegisterForm extends Component {
               name="experience_level" 
               id="experience_level"
               placeholder="Optional"
-              value={this.handleInputChangeFor('experience_level')}
+              value={this.state.experience_level}
               onChange={this.handleInputChangeFor('experience_level')}
               >
               <>
               <option>Select An Experience Level</option>
-              <option value='Killer of Plants'>Killer of Plants 😢</option>
+              <option value='Killer of Plants'>Killer of Plants</option>
               <option value='Plant Parent'>Plant Parent</option>
               <option value='Green Thumb'>Green Thumb</option>
               <option value='Master Gardener'>Master Gardener</option>

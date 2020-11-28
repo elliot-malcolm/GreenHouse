@@ -6,7 +6,7 @@ body,
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin: 0px;
+  margin: px;
   background-color: rgb(4, 159, 40);
 }
 
@@ -99,7 +99,7 @@ Form Treatment
 .formPanel {
   text-align: center;
   box-sizing: border-box;
-  width: 400px;
+  width: 200px;
   max-width: 100%;
   padding: 125px;
   padding-left: 50px;
@@ -112,6 +112,7 @@ Form Treatment
 input {
   margin: 5px;
   margin-bottom: 10px;
+  /* margin-left: 100px; */
 }
 
 #notesText {
@@ -126,6 +127,11 @@ input {
 .container {
   text-align: center;
   font-family: 'Courier', Courier, monospace;
+}
+
+#addPlantForm {
+  margin: 0%;
+  padding-right: 100px;
 }
 
 /* // Dashboard treatment */
