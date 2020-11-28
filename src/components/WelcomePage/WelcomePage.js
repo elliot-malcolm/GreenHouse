@@ -24,7 +24,7 @@ class WelcomePage extends Component {
             >
             🌱
           </span>
-          <h1>Hello World!</h1>
+          <h1>MyGarden</h1>
           <DashboardPage />
           
           {/* {JSON.stringify(this.props.store)} */}
