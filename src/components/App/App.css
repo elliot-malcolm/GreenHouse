@@ -7,7 +7,7 @@ body,
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: px;
-  background-color: rgb(4, 159, 40);
+  background-color: #33a860;
 }
 
 img {
@@ -159,11 +159,11 @@ input {
   border: aquamarine;
   border-width: 2px;
   border-style: solid;
-  display: inline-block;
+  display: block;
   position: relative;
   padding: 50px;
   padding-top: 10px;
-  margin-left: auto;
+  margin-left: 33%;
   height: 300px;
   width: 300px;
   font-size: 80%;
@@ -171,7 +171,7 @@ input {
 }
 
 .plantDiv ul {
-  font-size: 20px;
+  font-size: 16px;
   margin-right: 0;
   
 }
