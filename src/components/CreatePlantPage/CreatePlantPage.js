@@ -68,6 +68,7 @@ class CreatePlantPage extends Component {
     render() {
         return (
         <>
+        {/* <div> */}
             <div className="container">
                  <span
                 className="plantEmoji"
