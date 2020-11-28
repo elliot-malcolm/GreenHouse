@@ -20,7 +20,7 @@ class UserPage extends Component {
         <h2>Your Name is: {this.props.store.user.full_name}</h2>
         <h2>Your ID is: {this.props.store.user.id}</h2>
         <h2>Your Favorite Plant Type is: {this.props.store.user.favorite_plant}</h2>
-        <h2>Your Ecological Region is: {this.props.store.user.ecological_region}</h2>
+        <h2>Your Experience Level is: {this.props.store.user.experience_level}</h2>
         <LogOutButton className="log-in" />
       </div>
     );

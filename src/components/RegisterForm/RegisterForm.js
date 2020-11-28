@@ -8,8 +8,14 @@ class RegisterForm extends Component {
     password: '',
     full_name: '',
     favorite_plant: '',
-    ecological_region: '',
+    experience_level: '',
   };
+
+  componentDidMount = () => {
+    this.props.dispatch({
+      type: 'FETCH_PLANT_TYPE'
+    })
+  }
 
   registerUser = (event) => {
     event.preventDefault();
@@ -21,7 +27,7 @@ class RegisterForm extends Component {
         password: this.state.password,
         full_name: this.state.full_name,
         favorite_plant: this.state.favorite_plant,
-        ecological_region: this.state.ecological_region
+        experience_level: this.state.experience_level
       },
     });
   }; // end registerUser
@@ -85,32 +91,35 @@ class RegisterForm extends Component {
                 name="favorite_plant" 
                 id="favorite_plant"
                 placeholder="Optional"
-                value={this.state.favorite_plant}
-                onChange={this.handleInputChangeFor('favorite_plant')}
-                >
-                <>
-                <option>Select A Plant</option>
-                <option value='fyccus'>Fyccus</option>
-                <option value='snakey'>Snake</option>
-                </>
+                required
+                onChange={this.handleInputChangeFor('favorite_plant')}>
+                {this.props.store.plantTypeReducer.map((plantType) => {
+                  return (
+                <option value={plantType.type} key={plantType.id}>{plantType.type}</option>
+                )
+              })}
+                // <option>Select A Plant</option>
               </select>
             </label>
         </div>
         <br></br>
         <div>
           <label htmlFor="ecological_region">
-          Ecological Region:
+          Experience Level:
             <select 
-              name="ecological_region" 
-              id="ecological_region"
+              name="experience_level" 
+              id="experience_level"
               placeholder="Optional"
-              value={this.handleInputChangeFor('ecological_region')}
-              onChange={this.handleInputChangeFor('ecological_region')}
+              value={this.handleInputChangeFor('experience_level')}
+              onChange={this.handleInputChangeFor('experience_level')}
               >
               <>
-              <option>Select A Region</option>
-              <option value='marine west coast forest'>Marine West Coast Forest</option>
-              <option value='western forested mountains'>Western Forested Mountains</option>
+              <option>Select An Experience Level</option>
+              <option value='Killer of Plants'>Killer of Plants 😢</option>
+              <option value='Plant Parent'>Plant Parent</option>
+              <option value='Green Thumb'>Green Thumb</option>
+              <option value='Master Gardener'>Master Gardener</option>
+
               </>
             </select>
           </label>
