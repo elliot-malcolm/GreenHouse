@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 import { withRouter } from 'react-router-dom';
 import './ListPage.css'
+import CommentsList from '../CommentsList/CommentsList';
 
 class ListPage extends Component {
 
@@ -77,7 +78,6 @@ class ListPage extends Component {
                 
                     <h1>Plant List</h1>
                     </div>
-
             {this.props.store.plants.map( plant => {
               return (
             <>
@@ -88,14 +88,16 @@ class ListPage extends Component {
                 <div className="plantDiv">
                     <ul>
                         <div>
-                            <div>
+                            <h1 className="listHeader">{plant.username}'s {plant.type} named {plant.name}</h1>
+                            <div className="row">
+                            <div className="column">
                                 <img className="plantImage" src={plant.img_url} alt={plant.name}/>
                             </div>
-                                    <li>Name: {plant.name}</li>
+                                <div className="column" id="textColumn">
                                     <li>Type: {plant.type}</li>
                                     <li>Size: {plant.size}</li>
                                     <li>Scientific Name: {plant.sci_name}</li>
-                                    <li>Notes: {plant.notes}</li>
+                                    <p>Notes: {plant.notes}</p>
                                     <br></br>
                                     <div id="commentForm">
                                         <label htmlFor="comment">
@@ -103,10 +105,15 @@ class ListPage extends Component {
                                             <input type="text" placeholder="comment" 
                                             onChange={(event) => this.handleChange(event, 'comment')}/>
                                         </label>
-                                        <button onClick={(event) => this.addComment( plant.id )}>Submit Comment</button>
+                                        <br></br>
+                                        <button id="commentBtn" onClick={(event) => this.addComment( plant.id )}>Submit Comment</button>
+                                        {/* <CommentsList /> */}
                                     </div>
+                                </div>
+                            </div>
                         </div>  
                     </ul>
+                    {/* <br></br> */}
                     </div>
                     : 
                     <>
