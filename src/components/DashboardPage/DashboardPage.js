@@ -15,16 +15,8 @@ class DashboardPage extends Component {
     this.props.dispatch({
       type: 'FETCH_PLANTS'
   })
-    // setState({
-
-    // })
   }
-  
-  // componentDidMount = () => {
-  //   this.props.dispatch({
-  //       type: 'FETCH_PLANT_TYPE'
-  //   })
-  // }
+
 
   deletePlant = (event, param) => {
     console.log(event, param)
@@ -38,7 +30,6 @@ class DashboardPage extends Component {
   }
 
   updateRoute = ( param ) => {
-    // this.props.history.push(`/updateplant/${param}`);
     this.props.dispatch({
       type: 'FETCH_PLANT_BY_ID', payload: {param}, history: this.props.history 
     })
@@ -51,12 +42,12 @@ class DashboardPage extends Component {
             {this.props.store.plants.map( (plant, index) => {
             if (plant.user_id == this.props.store.user.id) {
               return (
-                <>
+              <div id="dashboardList">
               <div key={plant.id} className="plantDiv">
+              <h1>A {plant.size} {plant.type} named {plant.name}</h1>
               <div><img className="plantImage" src={plant.img_url} alt={plant.name}/></div>
               <div className='plantList'>
               <ul>
-                <li>Name: {plant.name}</li>
                 <li>Type: {plant.type}</li>
                 <li>Size: {plant.size}</li>
                 {plant.list === true ?
@@ -65,15 +56,15 @@ class DashboardPage extends Component {
                 <li>List?: No</li>
               }
                 <li>Scientific Name: {plant.sci_name}</li>
-                <li>Notes: {plant.notes}</li>
+                <p>Notes: {plant.notes}</p>
               </ul>
               <button className="gardenBtn" onClick={(event) => this.deletePlant(event, plant.id)}>Delete Plant</button>
               <button className="gardenBtn" onClick={() => this.updateRoute(plant.id)}>Edit Plant</button>
               <CommentsList currentPlantIndex={index} />
-              
               </div>
               </div>
-              </>
+              </div>
+            
               );
             }})}
           </div>

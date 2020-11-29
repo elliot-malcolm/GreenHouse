@@ -17,8 +17,7 @@ class MyGardenPage extends Component {
     return (
       <div id="welcomeList">
           <>
-          <div className="gardenListDiv">
-            <span
+          <span
             className="plantEmoji"
             role="img"
             aria-label=""
@@ -26,9 +25,10 @@ class MyGardenPage extends Component {
             >
             🌱
             </span>
-          </div>
+          <div className="plantDiv">
           <h1>MyGarden</h1>
             <DashboardPage />
+            </div>
           </>
           {/* {JSON.stringify(this.props.store)} */}
           {/* {JSON.stringify(this.props.store.plantTypeReducer)} */}
