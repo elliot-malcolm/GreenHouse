@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 import { withRouter } from 'react-router-dom';
+import CommentsList from '../CommentsList/CommentsList';
 
 import './DashboardPage.css'
 
@@ -47,7 +48,7 @@ class DashboardPage extends Component {
     render() {
         return (
           <div>
-            {this.props.store.plants.map( plant => {
+            {this.props.store.plants.map( (plant, index) => {
             if (plant.user_id == this.props.store.user.id) {
               return (
                 <>
@@ -63,17 +64,18 @@ class DashboardPage extends Component {
                 : 
                 <li>List?: No</li>
               }
-                <li>Sci Name: {plant.sci_name}</li>
+                <li>Scientific Name: {plant.sci_name}</li>
                 <li>Notes: {plant.notes}</li>
               </ul>
-              <button id="deleteBtn" onClick={(event) => this.deletePlant(event, plant.id)}>Delete Plant</button>
-              <button id="editBtn" onClick={() => this.updateRoute(plant.id)}>Edit Plant</button>
+              <button className="gardenBtn" onClick={(event) => this.deletePlant(event, plant.id)}>Delete Plant</button>
+              <button className="gardenBtn" onClick={() => this.updateRoute(plant.id)}>Edit Plant</button>
+              <CommentsList currentPlantIndex={index} />
+              
               </div>
               </div>
               </>
               );
             }})}
-          
           </div>
         );
     }

@@ -14,6 +14,22 @@ router.get('/', (req, res) => {
   })
 });
 
+
+
+// getPlantComments Saga
+
+
+
+// router.get('/', (req, res) => {
+//     let queryText = `SELECT * FROM "comments" WHERE "plant_id" = ($1);`;
+//     pool.query(queryText, [req.body.plant_id]).then((result) => [
+//       res.send(result.rows)
+//     ]).catch((error) => {
+//       console.log('error in get all the things', error);
+//       res.sendStatus(500);
+//     })
+//   });
+
  ////
 
  router.post('/', (req, res) => {

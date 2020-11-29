@@ -1,10 +1,10 @@
 import axios from 'axios';
-import { put, takeEvery, takeLatest } from 'redux-saga/effects';
+import { put, takeEvery } from 'redux-saga/effects';
 
 //get all comments
-function* fetchComments() {
+function* fetchComments(action) {
     try{
-      const commentResponse = yield axios.get(`/api/comment`)
+      const commentResponse = yield axios.get(`/api/comment`, action.payload)
       yield put({type: `SET_COMMENTS`, payload: commentResponse.data})
     } catch(error){
       console.log('Error in fetch',error);

@@ -24,6 +24,9 @@ class ListPage extends Component {
         this.props.dispatch({
           type: 'FETCH_PLANTS'
       })
+      this.props.dispatch({
+        type: 'FETCH_COMMENTS'
+    })
       }
 
     handleChange = (event, input) => {
@@ -48,6 +51,7 @@ class ListPage extends Component {
         this.props.dispatch({ type: 'ADD_COMMENT', payload: comment})
         // this.props.history.push(`/info`)
         console.log('add comment state', comment);
+
         };
 
     render() {
@@ -55,7 +59,11 @@ class ListPage extends Component {
           
         <div> 
             
-            {/* {JSON.stringify(this.props.store.comments)}  */}
+            {/* {JSON.stringify(this.props.store)}  */}
+            {/* {JSON.stringify(this.props.dispatch ({
+                type: "FETCH_COMMENTS"
+            })
+            )} */}
             
             <div className="gardenListDiv">
                     <span
@@ -74,10 +82,10 @@ class ListPage extends Component {
               return (
             <>
         
-              <div className='plantList'>
+              <div key={plant.id} className='plantList'>
               
                 {plant.list === true ? 
-                <div key={plant.id} className="plantDiv">
+                <div className="plantDiv">
                     <ul>
                         <div>
                             <div>
@@ -89,14 +97,15 @@ class ListPage extends Component {
                                     <li>Scientific Name: {plant.sci_name}</li>
                                     <li>Notes: {plant.notes}</li>
                                     <br></br>
-                                    <label htmlFor="comment">
-                                        Comment:
+                                    <div id="commentForm">
+                                        <label htmlFor="comment">
+                                            Comment:
                                             <input type="text" placeholder="comment" 
-                                            // value={this.state.comment}
                                             onChange={(event) => this.handleChange(event, 'comment')}/>
-                                    </label>
-                                 <button onClick={(event) => this.addComment( plant.id )}>Submit Comment</button>
-                        </div>
+                                        </label>
+                                        <button onClick={(event) => this.addComment( plant.id )}>Submit Comment</button>
+                                    </div>
+                        </div>  
                     </ul>
                     </div>
                     : 
