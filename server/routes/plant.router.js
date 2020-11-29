@@ -6,7 +6,9 @@ const router = express.Router();
 
 router.get('/', (req, res) => {
   //R in CRUD
-  let queryText = `SELECT * FROM "plant";`;
+  let queryText = `SELECT "plant".*, "user"."username" FROM "plant" 
+  JOIN "user" ON "user"."id" = "plant"."user_id"
+  GROUP BY "plant"."id", "user"."username";`;
   pool.query(queryText).then((result) => [
     res.send(result.rows)
   ]).catch((error) => {
