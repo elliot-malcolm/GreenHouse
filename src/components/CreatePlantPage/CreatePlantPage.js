@@ -78,51 +78,53 @@ class CreatePlantPage extends Component {
 
     render() {
         return (
-           
-        <>
+        <> 
+            <div className="container">
+                        <span
+                        className="plantEmoji"
+                        role="img"
+                        aria-label=""
+                        aria-hidden="true"
+                        >
+                        🌱
+                        </span>
+            </div>
+            <div id="addPlantForm">
         {/* {JSON.stringify(this.state)} */}
         {/* <div> */}
-            <div className="container">
-                 <span
-                className="plantEmoji"
-                role="img"
-                aria-label=""
-                aria-hidden="true"
-                >
-                🌱
-                </span>
+            <div className="addPlantRow">
+                <div className="addPlantColumn1">
+                <li>What should we call your plant?:</li>
             </div>
-        <div id="addPlantForm">
-            <div>
-                    <label htmlFor="name">
-                    What should we call your plant?:
-                        <input type="text" placeholder="name" 
-                        onChange={(event) => this.handleInputChangeFor(event, 'name')}/>
-                    </label>
+                <div className="addPlantColumn2">
+                        <label htmlFor="name">
+                            <input type="text" placeholder="name" 
+                            onChange={(event) => this.handleInputChangeFor(event, 'name')}/>
+                        </label>
+                </div>
             </div>
-            <div>
-                <label htmlFor="type">
-                   <div>
-                   What type is your plant?:
-                            <select 
-                                name="type"
-                                id="type"
-                                onChange={(event) => this.handleInputChangeForType(event, 'type.id')}>
-                                <option>Got no type?</option>
-                            {this.props.store.plantTypeReducer.map((plantType) => {
-                                return (
-                            <option value={plantType.id} key={plantType.id}>{plantType.type}</option>
-                            
-                            )
-                            })}
-                            </select>
-                        
-                    </div>
-                </label>
+            <div className="addPlantRow">
+                <div className="addPlantColumn1">
+                <li>What type is your plant?</li>
+                </div>
+                <div className="addPlantColumn2">
+                    <select name="type" id="type"
+                                    onChange={(event) => this.handleInputChangeForType(event, 'type.id')}>
+                                    <option>Got no type?</option>
+                                    {this.props.store.plantTypeReducer.map((plantType) => {
+                                        return (
+                                            <option value={plantType.id} key={plantType.id}>{plantType.type}</option>
+                                        )
+                                    })}
+                    </select>
+                </div>
             </div>
-            <div>
-                     <label htmlFor="size">
-                        How large is your plant?:
+            <div className="addPlantRow">
+                <div className="addPlantColumn1">
+                    <li>How large is your plant?:</li>
+                </div>
+                <div className="addPlantColumn2">
+                    <label htmlFor="size">
                         <select 
                             name="size" 
                             id="size"
@@ -132,33 +134,41 @@ class CreatePlantPage extends Component {
                             >
                             <>
                             <option>Plant Size?</option>
-                            <option value='Smol'>Smol</option>
-                            <option value='Medium'>Medium</option>
-                            <option value='Chonk'>Chonky</option>
+                            <option value='smol'>smol</option>
+                            <option value='medium'>medium</option>
+                            <option value='chonky'>chonky</option>
                             </>
                         </select>
                     </label>
                 </div>
-                <div>
-                     <label htmlFor="list">
-                     List your plant?:
-                         <select 
-                            name="list" 
-                            id="list"
-                            placeholder="Optional"
-                            onChange={(event) => this.handleInputChangeFor(event, 'list')}
-                            >
-                            <>
-                            <option>List your plant?</option>
-                            <option value='Yes'>Yes</option>
-                            <option value='No'>No</option>
-                            </>
-                        </select>
-                    </label>
+            </div>
+            <div className="addPlantRow">
+                <div className="addPlantColumn1">
+                    <li>Add your plant to the list?</li>
                 </div>
-                <div>
-                    <label htmlFor="notes">
-                    Plant Notes:
+                <div className="addPlantColumn2">
+                    <label htmlFor="list">
+                        <select 
+                        name="list" 
+                        id="list"
+                        placeholder="Optional"
+                        onChange={(event) => this.handleInputChangeFor(event, 'list')}
+                        >
+                        <>
+                        <option>List your plant?</option>
+                        <option value='Yes'>Yes</option>
+                        <option value='No'>No</option>
+                        </>
+                    </select>
+                </label>
+                </div>
+            </div>
+            <div className="addPlantRow">
+                <div className="addPlantColumn1">
+                    <li>Notes:</li>
+                </div>
+                <div className="addPlantColumn2">
+                <label htmlFor="notes">
                         <input
                         type="textbox"
                         id='notesText'
@@ -167,7 +177,9 @@ class CreatePlantPage extends Component {
                         />
                     </label>
                 </div>
-                <button onClick={this.addToGarden}>Add to Garden</button>
+            </div>
+                <button id="createPlantBtn" onClick={this.addToGarden}>Add to Garden</button>
+        {/* </div> */}
         </div>
         </>
         );
