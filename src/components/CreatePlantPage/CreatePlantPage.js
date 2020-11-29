@@ -80,7 +80,7 @@ class CreatePlantPage extends Component {
         return (
            
         <>
-        {JSON.stringify(this.state)}
+        {/* {JSON.stringify(this.state)} */}
         {/* <div> */}
             <div className="container">
                  <span

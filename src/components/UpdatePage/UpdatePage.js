@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
-import { Route , withRouter} from 'react-router-dom';
+import { withRouter} from 'react-router-dom';
 
 
 class UpdatePlantsPage extends Component {
