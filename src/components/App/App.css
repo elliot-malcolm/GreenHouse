@@ -21,6 +21,7 @@ Container
 
 .container {
   padding: 20px;
+  /* text-align: center; */
 }
 
 /* --------------------------------------------------------------------------------
@@ -166,31 +167,29 @@ input {
   display: block;
   position: relative;
   padding: 50px;
-  padding-top: 10px;
-  margin-left: 36%;
-  height: 300px;
-  width: 300px;
+  /* padding-top: 10px; */
+  margin-left: 20%;
+  height: 100%;
+  width: 50%;
   font-size: 80%;
-  /* vertical-align: middle; */
-}
-
-.plantDiv ul {
-  font-size: 16px;
-  margin-right: 0;
-  
+  vertical-align: middle;
+  padding-bottom: 50px;
 }
 
 .plantDiv img {
-  padding-top: 20%;
+  padding-top: 0%;
   float: left;
   position: relative;
-  max-width: 400px;
-  max-height: 400px;
+  width: 100%;
+  height: 100%;
 }
 
 .plantDiv ul{
   list-style-type: none;
-  padding: 20px;
+  padding: 0px;
+  padding-top: 20px;
+  font-size: 14px;
+  margin-right: 0;
 
 }
 
@@ -199,3 +198,109 @@ input {
   padding-left: 34%;
 }
 
+#commentForm {
+  /* position: absolute;
+  height: auto;
+  top: 50px;
+  bottom: 0; */
+  border: aquamarine;
+  border-width: 2px;
+  border-style: solid;
+  margin-top: 60px;
+  margin-left: 0px;
+}
+
+.commentDiv {
+  border: aquamarine;
+  border-width: 2px;
+  border-style: solid;
+  position: relative; 
+  left: 0px;  
+  right: 0px; 
+  bottom: 0; 
+  /* top: 100px;  */
+  width: 100%; 
+  height: auto; 
+  z-index: 999; 
+  background-color: white; 
+  opacity: 0.5;
+
+}
+
+.gardenBtn {
+  background-color: #096a2c;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.plantList {
+
+}
+
+#commentBtn {
+  background-color: #096a2c;
+  padding-bottom: 0px;
+  margin-bottom: 10px;
+}
+
+.row {
+  display: flex;
+}
+
+.column {
+  float: left;
+  width: 50%;
+  padding-left: 5%;
+}
+
+.plantTitle {
+  font-size: 100;
+}
+
+#textColumn {
+  padding-top: 10%;
+}
+
+.listHeader {
+  padding-bottom: 10%;
+}
+
+.addPlantRow {
+  display: flex;
+  width: 100%;
+  text-align: center;
+  align-items: center;
+}
+
+.addPlantColumn1 {
+  /* float: left; */
+  list-style: none;
+  width: 30%;
+  /* padding-left: 5%; */
+  text-align: right;
+}
+
+.addPlantColumn2 {
+  /* float: right; */
+  width: 30%;
+  padding-left: 5%;
+  text-align: left;
+  align-items: left;
+  /* justify-content: center; */
+  
+}
+
+#welcomeList {
+  padding-top: 20px;
+}
+
+#createPlantBtn {
+  position: absolute;
+  margin: 0;
+  left: 47%;
+}
+
+#notesText {
+  padding-right: 10px;
+  width: 200px;
+}

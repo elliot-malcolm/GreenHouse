@@ -2,3 +2,18 @@
     margin-top: 50px;
     text-align: center;
 }
+
+.plantTitle {
+    font-size: 100;
+}
+
+#textColumn {
+    padding-top: 10%;
+    text-align: left;
+    font-size: 22px;
+}
+
+#commentForm {
+    text-align: center;
+    font-size: 18px;
+}
