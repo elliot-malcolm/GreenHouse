@@ -6,6 +6,7 @@ const router = express.Router();
 
 router.get('/', (req, res) => {
   //R in CRUD
+  
   let queryText = `SELECT "plant".*, "user"."username" FROM "plant" 
   JOIN "user" ON "user"."id" = "plant"."user_id"
   GROUP BY "plant"."id", "user"."username";`;
@@ -42,6 +43,8 @@ router.post('/', (req, res, next) => {
         console.log('Plant creation failed ', err);
         res.sendStatus(500);
       });
+    } else {
+      res.sendStatus(403);
     }
   });
  
@@ -60,7 +63,7 @@ router.get('/:id', (req, res) => {
  ////
 
 router.delete('/:id', (req, res) => {
-  // D in CRUD
+
     // if (req.isAuthenticated()) {
       let queryText = `DELETE FROM "plant" WHERE id = $1;`;
       pool.query(queryText, [req.params.id]).then((result) => {

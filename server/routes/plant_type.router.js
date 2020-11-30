@@ -3,7 +3,7 @@ const pool = require('../modules/pool');
 const router = express.Router();
 
 router.get('/', (req, res) => {
-
+  if (req.isAuthenticated()) {
   let queryText = `SELECT * FROM "plant_type";`;
   pool.query(queryText).then((result) => [
     res.send(result.rows)
@@ -11,6 +11,9 @@ router.get('/', (req, res) => {
     console.log('error in get all the things', error);
     res.sendStatus(500);
   })
+} else {
+  res.sendStatus(403);
+}
 });
 
 
