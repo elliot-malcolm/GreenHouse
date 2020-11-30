@@ -11,11 +11,7 @@ class ListPage extends Component {
         comment: {
             comment: '',
             commentor_name: ''
-        }
-            // {
-            //     plant_id: this.props.store.plants[0]
-            // }
-        
+        }        
     }
 
     componentDidMount = () => {
@@ -41,6 +37,8 @@ class ListPage extends Component {
         // this.props.dispatch({ type: 'ADD_COMMENT', payload: this.state})
     }
 
+// if 
+
     addComment = ( plantId ) => {
         let comment = 
         { 
@@ -48,11 +46,15 @@ class ListPage extends Component {
             commentor_name: this.props.store.user.username,
             plant_id: plantId
         }
-        console.log('clicked', this.state);
         this.props.dispatch({ type: 'ADD_COMMENT', payload: comment})
+        this.setState({
+                comment: {
+                    comment: '',
+                    commentor_name: ''      
+            }
+        })
         // this.props.history.push(`/info`)
         console.log('add comment state', comment);
-
         };
 
     render() {
@@ -102,7 +104,7 @@ class ListPage extends Component {
                                     <div id="commentForm">
                                         <label htmlFor="comment">
                                             Comment:
-                                            <input type="text" placeholder="comment" 
+                                            <input type="text" placeholder="comment here" value={this.state.comment.comment}
                                             onChange={(event) => this.handleChange(event, 'comment')}/>
                                         </label>
                                         <br></br>
