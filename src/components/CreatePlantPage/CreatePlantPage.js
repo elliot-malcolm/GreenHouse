@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 import { withRouter } from 'react-router-dom';
+// import { alert } from 'react';
 
 
 class CreatePlantPage extends Component {
@@ -34,19 +35,15 @@ class CreatePlantPage extends Component {
     }
 
     addToGarden = () => {
-        console.log('clicked', this.state);
-        // this.setState({
-        //     // ...this.state,
-        //     plant: {
-        //         user_id: (this.props.store.user.id)
-        //     }
-        // })
-        this.props.dispatch({ type: 'ADD_PLANT', payload: this.state.plant})
-        this.props.history.push(`/info`)
-        console.log(this.state.plant);
+        if (this.state.plant.name === '' || this.state.plant.size === '' || this.state.plant.list === '' || this.state.plant.type === '') {
+            alert('please fill name, type, size and list fields!')
+        } else {
+            this.props.dispatch({ type: 'ADD_PLANT', payload: this.state.plant})
+            this.props.history.push(`/info`)
+            console.log(this.state.plant);
+        }
         };
-
-
+        
     handleInputChangeForType = (event, input) => {
         for (let plantType of this.props.store.plantTypeReducer) {
             console.log(plantType.id);
@@ -108,7 +105,7 @@ class CreatePlantPage extends Component {
                 <li>What type is your plant?</li>
                 </div>
                 <div className="addPlantColumn2">
-                    <select name="type" id="type"
+                    <select name="type" id="type" required
                                     onChange={(event) => this.handleInputChangeForType(event, 'type.id')}>
                                     <option>Got no type?</option>
                                     {this.props.store.plantTypeReducer.map((plantType) => {
@@ -152,6 +149,7 @@ class CreatePlantPage extends Component {
                         name="list" 
                         id="list"
                         placeholder="Optional"
+                        required
                         onChange={(event) => this.handleInputChangeFor(event, 'list')}
                         >
                         <>
@@ -178,7 +176,7 @@ class CreatePlantPage extends Component {
                     </label>
                 </div>
             </div>
-                <button id="createPlantBtn" onClick={this.addToGarden}>Add to Garden</button>
+                <button id="createPlantBtn" className="gardenBtn" onClick={this.addToGarden}>Add to Garden</button>
         {/* </div> */}
         </div>
         </>
