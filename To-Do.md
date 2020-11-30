@@ -42,22 +42,22 @@ Update Database:
     [x] update "plant" routes and states to accommodate user_id
     [x] conditional render unique user gardens
     
-    [] reference "comment" through "plant"
-    [] build comment routes
+    [x] reference "comment" through "plant"
+    [x] build comment routes
 
 
 Stretch
-[] Plant List
+[x] Plant List
     [x] map through reducer selecting boolean true
     [x] display to public list boolean TRUE
-    [] allow comments
-        []comments saga
-        []comments put route
-        []comments database 
+    [x] allow comments
+        [x]comments saga
+        [x]comments put route
+        [x]comments database 
 
 [] Stretch
-    [] Public List page to showcase garden 
-    [] Public commenting feature 
+    [x] All-user-accessible List page to showcase garden 
+    [x] User commenting feature 
     [] Cloud Storage for plant image database 
     [] Plant Health History - page to add "Health History" dated data to plant object
     [] Trefle API for plant info 
