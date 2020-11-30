@@ -229,7 +229,7 @@ input {
 
 .gardenBtn {
   background-color: #096a2c;
-  padding-bottom: 10px;
+  padding-bottom: 0px;
   margin-bottom: 10px;
 }
 
@@ -303,4 +303,10 @@ input {
 #notesText {
   padding-right: 10px;
   width: 200px;
+}
+
+input[type="text"], select, input[type="textbox"] {
+
+  background-color : #94fcd8; 
+
 }
