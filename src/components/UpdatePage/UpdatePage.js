@@ -121,7 +121,7 @@ class UpdatePlantsPage extends Component {
                             <option defaultValue='selected'>{this.state.plant.size}</option>
                             <option value='Smol'>Smol</option>
                             <option value='Medium'>Medium</option>
-                            <option value='Chonk'>Chonky</option>
+                            <option value='Chonky'>Chonky</option>
                             </>
                         </select>
                     </label>

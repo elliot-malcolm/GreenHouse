@@ -43,7 +43,7 @@ class CreatePlantPage extends Component {
             console.log(this.state.plant);
         }
         };
-        
+
     handleInputChangeForType = (event, input) => {
         for (let plantType of this.props.store.plantTypeReducer) {
             console.log(plantType.id);
@@ -131,9 +131,9 @@ class CreatePlantPage extends Component {
                             >
                             <>
                             <option>Plant Size?</option>
-                            <option value='smol'>smol</option>
-                            <option value='medium'>medium</option>
-                            <option value='chonky'>chonky</option>
+                            <option value='Smol'>Smol</option>
+                            <option value='Medium'>Medium</option>
+                            <option value='Chonky'>Chonky</option>
                             </>
                         </select>
                     </label>

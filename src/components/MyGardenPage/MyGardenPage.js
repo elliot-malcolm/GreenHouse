@@ -26,7 +26,7 @@ class MyGardenPage extends Component {
             🌱
             </span>
           <div className="plantDiv">
-          <h1>MyGarden</h1>
+          <h1>My Garden</h1>
             <DashboardPage />
             </div>
           </>
