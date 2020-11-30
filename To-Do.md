@@ -54,7 +54,7 @@ Stretch
         [x]comments saga
         [x]comments put route
         [x]comments database 
-
+x
 [] Stretch
     [x] All-user-accessible List page to showcase garden 
     [x] User commenting feature 
