@@ -305,8 +305,16 @@ input {
   width: 200px;
 }
 
-input[type="text"], select, input[type="textbox"] {
+input[type="text"], input[type="password"], select, input[type="textbox"] {
 
   background-color : #94fcd8; 
 
+}
+
+#greenHouseImage {
+  max-width: 30%;
+}
+
+#aboutEmoji {
+  margin-bottom: -100px;
 }
