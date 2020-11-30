@@ -14,6 +14,7 @@ const plantRouter = require('./routes/plant.router');
 const plantTypeRouter = require('./routes/plant_type.router');
 // const plantUpdateRouter = require('./routes/plant_update.router')
 const commentRouter = require ('./routes/comments.router')
+const UploaderS3Router = require ('react-dropzone-s3-uploader/s3router')
 
 // Body parser middleware
 app.use(bodyParser.json());
@@ -31,6 +32,13 @@ app.use('/api/user', userRouter);
 app.use('/api/plant', plantRouter);
 app.use('/api/plantType', plantTypeRouter);
 app.use('/api/comment', commentRouter);
+
+app.use('/s3', UploaderS3Router({
+  bucket: 'imageuploadgreenhouse',                           // required
+  region: 'us-east-2',                            // optional
+  headers: {'Access-Control-Allow-Origin': '*'},  // optional
+  ACL: 'public-read',                                 // this is the default - set to `public-read` to let anyone view uploads
+}));
 
 // Serve static files
 app.use(express.static('build'));
