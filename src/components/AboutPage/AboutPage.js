@@ -1,5 +1,5 @@
 import React from 'react';
-import image from './Untitled-1.png'
+import image from './greenThumbimg.png'
 
 // This is one of our simplest components
 // It doesn't have local state, so it can be a function component.
@@ -19,7 +19,7 @@ const AboutPage = () => (
     </span>
     </div>
       <h3 id="readme">
-      <br></br><img id="greenHouseImage" src={image}></img>
+      <br></br><img id="greenHouseImage2" src={image}></img>
       <br></br> is a Reactjs-based app
       <br></br>for digitizing plants<br></br>and social sharing.
         <br></br>

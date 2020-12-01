@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import './Nav.css';
 import mapStoreToProps from '../../redux/mapStoreToProps';
-import image from './Untitled-2.png'
+import image from './greenThumbimg.png'
 
 const Nav = (props) => {
   let loginLinkData = {

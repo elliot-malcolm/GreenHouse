@@ -9,7 +9,7 @@ import ImageUpload from '../ImageUpload/ImageUpload';
 // or even care what the redux state is, so it doesn't need 'connect()'
 
 const Footer = () => <footer>
-    <ImageUpload />
-    &copy; Green Thumb LLC</footer>;
+    {/* <ImageUpload /> */}
+    &copy; Elliot Malcolm </footer>;
 
 export default Footer;
