@@ -6,7 +6,7 @@
 ## Screenshot:
 [Example](public/example_image.png)
 
-##Prerequisites: 
+## Prerequisites: 
 
 - [Node.js](https://nodejs.org/en/)
 - [Postgresql](https://www.postgresql.org)
