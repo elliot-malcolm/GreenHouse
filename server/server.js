@@ -1,6 +1,7 @@
 
 const express = require('express');
 require('dotenv').config();
+// const cors = require('cors');
 
 const app = express();
 const bodyParser = require('body-parser');
@@ -15,6 +16,8 @@ const plantTypeRouter = require('./routes/plant_type.router');
 // const plantUpdateRouter = require('./routes/plant_update.router')
 const commentRouter = require ('./routes/comments.router')
 const UploaderS3Router = require ('react-dropzone-s3-uploader/s3router')
+// const imageUrlRouter = require ('./routes/imageurl.router')
+
 
 // Body parser middleware
 app.use(bodyParser.json());
@@ -32,6 +35,7 @@ app.use('/api/user', userRouter);
 app.use('/api/plant', plantRouter);
 app.use('/api/plantType', plantTypeRouter);
 app.use('/api/comment', commentRouter);
+// app.use('/api/imageurl', imageUrlRouter)
 
 app.use('/s3', UploaderS3Router({
   bucket: 'imageuploadgreenhouse',                           // required

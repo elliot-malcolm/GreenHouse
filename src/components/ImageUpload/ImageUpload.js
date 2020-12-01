@@ -5,12 +5,13 @@ import DropzoneS3Uploader from 'react-dropzone-s3-uploader';
 
 
 class ImageUpload extends Component {
-//   handleFinishedUpload = (info) => {
-//     this.props.dispatch({
-//       type: 'POST_IMAGE_URL',
-//       payload: info.fileUrl,
-//     });
-//   };
+  handleFinishedUpload = (info) => {
+    this.props.dispatch({
+      type: 'POST_IMAGE_URL',
+      payload: info.fileUrl,
+    });
+  }
+  // };
 //   state = {
 //     content: (<div id="not-hidden">Click To Upload Drawings</div>)
 //   }
@@ -57,7 +58,8 @@ class ImageUpload extends Component {
 //               children={this.state.content} //optional
 //             />
 //       </div>
-    );
+      );
+    }
   }
-}
+
 export default connect()(ImageUpload);

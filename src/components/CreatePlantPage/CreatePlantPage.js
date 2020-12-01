@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 import { withRouter } from 'react-router-dom';
+// import ImageUpload from '../ImageUpload/ImageUpload';
 // import { alert } from 'react';
 
 
@@ -85,7 +86,9 @@ class CreatePlantPage extends Component {
                         >
                         🌱
                         </span>
+                        <h1> Create a plant profile: </h1>
             </div>
+            {/* <ImageUpload /> */}
             <div id="addPlantForm">
         {/* {JSON.stringify(this.state)} */}
         {/* <div> */}
@@ -131,9 +134,9 @@ class CreatePlantPage extends Component {
                             >
                             <>
                             <option>Plant Size?</option>
-                            <option value='Smol'>Smol</option>
-                            <option value='Medium'>Medium</option>
-                            <option value='Chonky'>Chonky</option>
+                            <option value='smol'>smol</option>
+                            <option value='mid-size'>mid-size</option>
+                            <option value='chonky'>chonky</option>
                             </>
                         </select>
                     </label>
