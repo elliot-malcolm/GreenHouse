@@ -4,7 +4,7 @@
 ##Description: Green Thumb is a Reactjs-based consumer web app for digitizing and sharing plants with an online community.  Whether a user needs advice on care-techniques or just wants to show off their garden, GreenThumb is the place.
 
 ## Screenshot:
-[Example](public/example_image.png)
+![Example](public/example_image.png)
 
 ## Prerequisites: 
 
