@@ -78,7 +78,7 @@ class ListPage extends Component {
                     🌱
                     </span>
                 
-                    <h1>Plant List</h1>
+                    <h1>Public Garden</h1>
                     </div>
             {this.props.store.plants.map( plant => {
               return (

@@ -39,7 +39,7 @@ const Nav = (props) => {
               New Plant  
               </Link>
               <Link className="nav-link" to="/list">
-              Plants List
+              Public Garden
               </Link>
               {/* <Link className="nav-link" to="/about">
               About
