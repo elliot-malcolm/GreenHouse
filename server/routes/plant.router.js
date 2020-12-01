@@ -2,7 +2,7 @@ const express = require('express');
 const pool = require('../modules/pool');
 const router = express.Router();
 
- ////
+ /// Serve information to the dom from the db
 
 router.get('/', (req, res) => {
   //R in CRUD
@@ -18,7 +18,7 @@ router.get('/', (req, res) => {
   })
 });
 
- ////
+ //// Post info to the db from the dom
 
 router.post('/', (req, res, next) => {
   //C in CRUD
@@ -48,7 +48,7 @@ router.post('/', (req, res, next) => {
     }
   });
  
-  ////
+  //// Get plants by ID
 
 router.get('/:id', (req, res) => {
   const queryText = `SELECT * FROM "plant" WHERE "id"=$1`
@@ -60,7 +60,7 @@ router.get('/:id', (req, res) => {
   })
 });
 
- ////
+ //// Delete plants by ID
 
 router.delete('/:id', (req, res) => {
 
@@ -78,6 +78,7 @@ router.delete('/:id', (req, res) => {
     // }
   });
 
+// Update plants by ID
 
 router.put('/:id', (req, res) => {
   console.log('put router body + params', req.body, req.params);

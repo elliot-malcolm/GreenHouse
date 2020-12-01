@@ -1,6 +1,8 @@
 import axios from 'axios';
 import { put, takeLatest } from 'redux-saga/effects';
 
+// routes user data for commenting
+
 function* addComment(action) {
     try {
         yield axios.post('/api/comment', action.payload, );

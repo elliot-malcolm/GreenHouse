@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 import DashboardPage from '../DashboardPage/DashboardPage';
-
 import './MyGardenPage.css';
+
+// this component displays the My Garden page, a user dashboard
 
 class MyGardenPage extends Component {
 

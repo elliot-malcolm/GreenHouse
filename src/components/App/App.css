@@ -170,7 +170,7 @@ input {
   /* padding-top: 10px; */
   margin-left: 20%;
   height: 100%;
-  width: 50%;
+  width: 54%;
   font-size: 80%;
   vertical-align: middle;
   padding-bottom: 50px;
@@ -219,7 +219,7 @@ input {
   right: 0px; 
   bottom: 0; 
   /* top: 100px;  */
-  width: 100%; 
+  width: 105%; 
   height: auto; 
   z-index: 999; 
   background-color: white; 
@@ -231,10 +231,6 @@ input {
   background-color: #096a2c;
   padding-bottom: 0px;
   margin-bottom: 10px;
-}
-
-.plantList {
-
 }
 
 #commentBtn {
@@ -267,26 +263,23 @@ input {
 
 .addPlantRow {
   display: flex;
-  width: 100%;
+  width: 80%;
   text-align: center;
   align-items: center;
 }
 
 .addPlantColumn1 {
-  /* float: left; */
   list-style: none;
   width: 30%;
-  /* padding-left: 5%; */
   text-align: right;
 }
 
 .addPlantColumn2 {
-  /* float: right; */
   width: 30%;
   padding-left: 5%;
   text-align: left;
   align-items: left;
-  /* justify-content: center; */
+  
   
 }
 
@@ -321,4 +314,10 @@ input[type="text"], input[type="password"], select, input[type="textbox"] {
 
 #aboutEmoji {
   margin-bottom: -100px;
+}
+
+#saveUpdatesBtn {
+  background-color: #096a2c;
+  padding-bottom: 0px;
+  margin-bottom: 10px;
 }

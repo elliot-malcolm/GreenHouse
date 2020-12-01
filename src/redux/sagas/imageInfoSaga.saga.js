@@ -1,6 +1,8 @@
 // import axios from 'axios';
 // import { put, takeLatest } from 'redux-saga/effects';
 
+// AWS image serving in progress
+
 // function* postImageUrl(action) {
 //   try {
 //     const config = {

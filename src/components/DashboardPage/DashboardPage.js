@@ -6,6 +6,8 @@ import CommentsList from '../CommentsList/CommentsList';
 
 import './DashboardPage.css'
 
+// this component renders data to the My Garden page
+
 class DashboardPage extends Component {
 
   componentDidMount = () => {
@@ -17,6 +19,7 @@ class DashboardPage extends Component {
   })
   }
 
+// function to delete plant
 
   deletePlant = (event, param) => {
     console.log(event, param)
@@ -28,6 +31,8 @@ class DashboardPage extends Component {
       payload: plantData
     })
   }
+
+// function to traverse to plant update page
 
   updateRoute = ( param ) => {
     this.props.dispatch({

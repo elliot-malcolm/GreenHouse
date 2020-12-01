@@ -42,6 +42,7 @@ class ImageUpload extends Component {
         upload={uploadOptions}
       />
 
+      // AWS cloud serving in progress
 //   render() {
 //     const uploadOptions = {};
 //     const s3Url = process.env.REACT_APP_S3_URL;

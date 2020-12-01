@@ -18,18 +18,10 @@ class CommentsList extends Component {
     })
       }
 
-//function to do if(check)
-
     render() {
         return (
           
         <div> 
-{/*             
-            {JSON.stringify(this.props.store.comments)}  */}
-            {/* {JSON.stringify(this.props.dispatch ({
-                type: "FETCH_COMMENTS"
-            })
-            )} */}
 
             {this.props.store.comments.map( comment => {
             if (Number(comment.plant_id) == Number(this.props.store.plants[this.props.currentPlantIndex].id)) {

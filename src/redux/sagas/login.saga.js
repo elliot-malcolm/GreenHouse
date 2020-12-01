@@ -28,8 +28,6 @@ function* loginUser(action) {
       // if the username and password don't match in the database
       yield put({ type: 'LOGIN_FAILED' });
     } else {
-      // Got an error that wasn't a 401
-      // Could be anything, but most common cause is the server is not started
       yield put({ type: 'LOGIN_FAILED_NO_CODE' });
     }
   }

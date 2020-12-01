@@ -1,6 +1,8 @@
 import axios from 'axios';
 import { put, takeEvery } from 'redux-saga/effects';
 
+// find plant object by ID saga
+
 function* findPlantById(action) {
   console.log('saga firing', action.payload);
   try{

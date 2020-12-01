@@ -3,6 +3,9 @@ import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 import './RegisterForm.css'
 
+
+// a RegisterForm to register a user
+
 class RegisterForm extends Component {
   state = {
     username: '',

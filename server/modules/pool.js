@@ -11,8 +11,6 @@ const url = require('url');
 let config = {};
 
 if (process.env.DATABASE_URL) {
-  // Heroku gives a url, not a connection object
-  // https://github.com/brianc/node-pg-pool
   const params = url.parse(process.env.DATABASE_URL);
   const auth = params.auth.split(':');
 

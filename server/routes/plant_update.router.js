@@ -2,6 +2,7 @@ const express = require('express');
 const pool = require('../modules/pool');
 const router = express.Router();
 
+// Update a plant's information
 router.put('/:id', (req, res, next) => {
   console.log('put router body + params', req.body, req.params);
  

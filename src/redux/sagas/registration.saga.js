@@ -2,6 +2,7 @@ import { put, takeLatest } from 'redux-saga/effects';
 import axios from 'axios';
 
 // worker Saga: will be fired on "REGISTER" actions
+
 function* registerUser(action) {
   try {
     // clear any existing error on the registration page

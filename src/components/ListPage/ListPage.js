@@ -5,6 +5,8 @@ import { withRouter } from 'react-router-dom';
 import './ListPage.css'
 import CommentsList from '../CommentsList/CommentsList';
 
+// this component displays the Public Garden information
+
 class ListPage extends Component {
 
     state = {
@@ -34,10 +36,8 @@ class ListPage extends Component {
             [input]: event.target.value 
             }
         })
-        // this.props.dispatch({ type: 'ADD_COMMENT', payload: this.state})
+       
     }
-
-// if 
 
     addComment = ( plantId ) => {
         let comment = 
@@ -53,7 +53,6 @@ class ListPage extends Component {
                     commentor_name: ''      
             }
         })
-        // this.props.history.push(`/info`)
         console.log('add comment state', comment);
         };
 
@@ -61,12 +60,7 @@ class ListPage extends Component {
         return (
           
         <div> 
-            
-            {/* {JSON.stringify(this.props.store)}  */}
-            {/* {JSON.stringify(this.props.dispatch ({
-                type: "FETCH_COMMENTS"
-            })
-            )} */}
+
             
             <div className="gardenListDiv">
                     <span
@@ -115,7 +109,6 @@ class ListPage extends Component {
                             </div>
                         </div>  
                     </ul>
-                    {/* <br></br> */}
                     </div>
                     : 
                     <>

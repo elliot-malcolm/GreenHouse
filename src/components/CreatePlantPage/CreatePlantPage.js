@@ -5,6 +5,7 @@ import { withRouter } from 'react-router-dom';
 // import ImageUpload from '../ImageUpload/ImageUpload';
 // import { alert } from 'react';
 
+// This component takes in user input data for transfer to the DB
 
 class CreatePlantPage extends Component {
 
@@ -86,12 +87,11 @@ class CreatePlantPage extends Component {
                         >
                         🌱
                         </span>
-                        <h1> Create a plant profile: </h1>
+                        <h1> Add a plant to your garden: </h1>
             </div>
             {/* <ImageUpload /> */}
             <div id="addPlantForm">
-        {/* {JSON.stringify(this.state)} */}
-        {/* <div> */}
+   
             <div className="addPlantRow">
                 <div className="addPlantColumn1">
                 <li>What should we call your plant?:</li>

@@ -1,7 +1,8 @@
 import axios from 'axios';
 import { put, takeEvery } from 'redux-saga/effects';
 
-//send axios request to shelf.router to get all items from shelf DB
+//delete a plant by ID saga
+
 function* deletePlant(action) {
   try{
     const results = yield axios.delete(`/api/plant/${action.payload.id}`)  

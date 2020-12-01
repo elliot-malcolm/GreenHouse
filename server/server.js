@@ -37,6 +37,7 @@ app.use('/api/plantType', plantTypeRouter);
 app.use('/api/comment', commentRouter);
 // app.use('/api/imageurl', imageUrlRouter)
 
+// in Progress AWS connectivity for image upload
 app.use('/s3', UploaderS3Router({
   bucket: 'imageuploadgreenhouse',                           // required
   region: 'us-east-2',                            // optional

@@ -2,6 +2,7 @@ import axios from 'axios';
 import { put, takeEvery } from 'redux-saga/effects';
 
 //get all comments
+
 function* fetchComments(action) {
     try{
       const commentResponse = yield axios.get(`/api/comment`, action.payload)

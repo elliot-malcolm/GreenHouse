@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 import { withRouter} from 'react-router-dom';
 
+// the UpdatePage component updates plant information at a given index
 
 class UpdatePlantsPage extends Component {
 
@@ -159,7 +160,7 @@ class UpdatePlantsPage extends Component {
                         />
                     </label>
                 </div>
-                <button onClick={this.updatePlant}>Save Updates</button>
+                <button id="saveUpdatesBtn" onClick={this.updatePlant}>Save Updates</button>
         </div>
         );
     }

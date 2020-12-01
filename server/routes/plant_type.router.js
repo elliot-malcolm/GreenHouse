@@ -2,6 +2,7 @@ const express = require('express');
 const pool = require('../modules/pool');
 const router = express.Router();
 
+// GET plants from Plant_type Database
 router.get('/', (req, res) => {
   if (req.isAuthenticated()) {
   let queryText = `SELECT * FROM "plant_type";`;
